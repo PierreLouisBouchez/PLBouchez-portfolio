@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perspective Editor</title>
+  <style>
+    
+    @font-face {
+      font-family: 'Victor';
+      src:
+        url("./VictorMono-Regular.ttf") format("truetype") ;
+      font-weight: 300;
+      font-style: normal;
+    }
+
+
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Victor';
+      background-color: #ababab;
+      font-weight: 100;
+      flex-flow: row nowrap;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      overflow: clip;
+      color: #262626;
+      scrollbar-color: rgb(170, 170, 170) rgb(43, 43, 43);
+      scrollbar-gutter: stable;
+      scrollbar-shadow-color: #262626 2px 2px 0px;
+      scrollbar-3dlight-color: #262626 2px 2px 0px;
+    }
+
+    .scene {
+      min-width: 600px;
+      min-height: 900px;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      background-image: url("Untitled.png");
+      background-position: bottom;
+      bottom: 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-right: #262626 solid 4px;      
+      box-shadow: 0px 0px 2px #262626 , 0.5px 0px 1px rgba(255, 0, 0, 0.7),-0.5px 1px 1px rgba(0, 0, 255, 0.7);
+    }
+
+    .rightPanel {
+      width: 60%;
+      padding-left: 2%;
+      padding-right: 5%;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+      align-items: center;
+      perspective-origin: top left;
+      perspective: 600px;
+      
+    }
+    .container {
+      width: 95%;
+      height: 103%;
+      position: absolute;
+      overflow-y: scroll;
+      transform-style: preserve-3d;
+      transform: rotateX(2deg) rotateY(0.3deg) rotateZ(-0.1deg);
+      grid-template-columns: auto auto auto;
+      column-gap: 2vmax;
+      row-gap: 2vmax;
+      display: grid;
+      translate: 0 0px ;
+    }
+
+    .cube {
+      width: 350px;
+      height: 350px;
+      background-color: grey;
+      border: 4px solid #262626;
+      transform-origin: center bottom;
+      box-shadow: -3px 4px 0px #262626 , 0.5px 0px 1px rgba(255, 0, 0, 0.7),-3.5px 2px 1px rgba(0, 0, 255, 0.7); 
+      filter: blur(0.7px);
+    }
+    
+
+    .cadre{
+      background-color: #bebebe;
+      height: 93%;
+      width:auto;
+      border: #262626 solid 4px;
+      margin:2.5%;
+    }
+
+    .controls {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background: rgba(255,255,255,0.8);
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+      opacity: 0;
+    }
+
+    .menu {
+      width:70%;
+      padding: 0px 0px 18px 25px;
+      font-size: 1.5rem;
+      text-shadow: 0px 0px 2px #262626 , 0.5px 0px 1px rgba(255, 0, 0, 0.5),-0.5px 1px 1px rgba(0, 0, 255, 0.5); 
+      filter: blur(0.2px);
+      text-align: left;
+      rotate: 0.5deg;
+    } 
+
+    .menu h2 {
+      font-size: 1.5rem;
+      font-weight: 100;
+      margin: 0;
+    }
+
+    .controls label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .controls input {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+<div style="width: 100vw;height: 100vh; background-image: url('Noise.jpg'); position:absolute ; z-index: 100; opacity: 15%; pointer-events: none;"></div>
+<div class="scene">
+  <div class="menu">
+
+    <h1>
+      PIERRE-LOUIS<br> BOUCHEZ <br>
+    </h1>
+    <h2>>ABOUT ME</h2><br>
+    <h2>  PROJECT</h2><br>
+    <h2>  HOBBY</h2><br>
+  </div>
+</div>
+<div class="rightPanel">
+  <div class="container" id="container">
+    <div class="cube" style="margin-top: 10px;"> <div class="cadre"></div></div>
+    <div class="cube" style="margin-top: 10px;"> <div class="cadre"></div></div>
+    <div class="cube" style="margin-top: 10px;"> <div class="cadre"></div></div>
+    <div class="cube"> <div class="cadre"></div></div>
+    <div class="cube"> <div class="cadre"></div></div>
+    <div class="cube"> <div class="cadre"></div></div>
+    <div class="cube"> <div class="cadre"></div></div>
+    <div class="cube"> <div class="cadre"></div></div>
+    <div class="cube"> <div class="cadre"></div></div>
+    <div class="cube"> <div class="cadre"></div></div>
+    <div class="cube"> <div class="cadre"></div></div>
+    <div class="cube"> <div class="cadre"></div></div>
+    <div class="cube"> <div class="cadre"></div></div>
+  </div>
+</div>
+
+
+</body>
+</html>
