@@ -4,25 +4,18 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './Components/Header'
 import Footer from './Components/Footer'
+import Projects from './Homepage'
 
 function App() {
+  const [currentMenu,setCurrentMenu]=useState("Project");
 
   return (
-    <>
-        <Header/>
-        <div className='w-full justify-evenly flex p-8 text-2xl'>
-          <div>
-
-          <p class="  h-dvh w-full  font-bold   ">
-          Pierre-Louis Bouchez
-          </p>
-          </div>
-          <div className='w-1/2'>
-            <img src="https://cdnb.artstation.com/p/assets/images/images/055/814/221/large/paouis-untitledenhanced.jpg?1667824304" alt="" srcset="" />
-          </div>
-        </div>
-        <Footer/>
-    </>
+    <div className='h-screen w-screen font-Victor flex flex-row bg-[#ababab] overflow-x-hidden'>
+      <div className="absolute w-screen h-screen opacity-10 z-50 pointer-events-none bg-[url(/Images/Noise.jpg)]"></div>
+        <Header currentMenu={currentMenu} setCurrentMenu={setCurrentMenu}/>
+        
+        <Projects/>    
+    </div>
   )
 }
 
