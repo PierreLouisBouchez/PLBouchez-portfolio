@@ -1,5 +1,6 @@
 import githubLogo from '/Images/github.png'; // ajuste le chemin si besoin
-
+import LinkedinLogo from '/Images/Linkedin.png'; // ajuste le chemin si besoin
+import InstagramLogo from '/Images/Instagram.png'; // ajuste le chemin si besoin
 
 export default function Header({currentMenu,setCurrentMenu}) {
 
@@ -13,19 +14,31 @@ export default function Header({currentMenu,setCurrentMenu}) {
     ;
 
     return (
-      <div className="flex w-[620px] ">
+      <div className="flex w-[620px] perspective-near perspective-origin-bottom-right h-[100vh] ">
         <div className="w-full h-full bg-cover bg-size-[200%] bg-no-repeat bg-right-bottom  bg-[url(/Images/Untitled.png)]"></div>
         <a href='https://github.com/PierreLouisBouchez' 
         target="_blank" 
-        className="absolute bottom-[3.3rem] left-[3.7rem] flex h-[6.6rem] rounded-2xl cursor-pointer w-[6.6rem] hover:translate-1 transition-transform align-bottom">
+        className="absolute bottom-[3.3rem]  left-[3.7rem] flex h-[6.6rem] max-h-[6.6rem] rounded-2xl cursor-pointer w-[6.6rem] hover:-translate-z-1 transition-transform align-bottom">
 
-          <img src={githubLogo} alt="Logo GitHub" />
+          <img src={githubLogo} className='w-full h-full' alt="Logo GitHub" />
         </a>
         
+        <a href='https://linkedin.com/in/pierre-louis-bouchez/' 
+        target="_blank" 
+        className="absolute bottom-[3.3rem] left-[10.7rem] flex h-[6.6rem] max-h-[6.6rem] rounded-2xl cursor-pointer w-[6.6rem] hover:-translate-z-1 transition-transform align-bottom">
+
+          <img src={LinkedinLogo} className='w-full h-full' alt="Logo GitHub" />
+        </a>
         
-        
-        
-        
+        <a href='https://www.instagram.com/paouis__/' 
+        target="_blank" 
+        className="absolute bottom-[3.3rem] left-[17.7rem] flex h-[6.6rem] max-h-[6.6rem] rounded-2xl cursor-pointer w-[6.6rem] hover:-translate-z-1 transition-transform align-bottom">
+          <img src={InstagramLogo} className='w-full h-full' alt="Logo GitHub" />
+        </a>
+
+        <a href='https://letterboxd.com/paouis/' 
+        target="_blank" 
+        className="absolute bottom-[17rem] left-[7rem] hover:bg-white blur-xl opacity-50  flex h-[3rem] max-h-[4rem] rounded-2xl w-[4rem] cursor-pointer align-bottom z-50"/>
         
         
         <div className="absolute w-[90%] h-[80%] p-8 text-3xl text-[#262626] blur-[0.75px] select-none" >
