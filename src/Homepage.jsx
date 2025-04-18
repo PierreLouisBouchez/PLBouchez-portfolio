@@ -1,27 +1,32 @@
 import { useState } from "react";
 
 const cards = [
-    { title: "Bomberman", color: "bg-yellow-400" },
-    { title: 2, color: "bg-orange-400" },
-    { title: 3, color: "bg-blue-700" },
-    { title: 4, color: "bg-red-700" },
-    { title: 5, color: "bg-orange-400" },
-    { title: 6, color: "bg-yellow-400" },
-    {title: 7, color: "bg-yellow-400" },
-    { title: 8, color: "bg-orange-400" },
-    { title: 9, color: "bg-blue-700" },
-    { title: 10, color: "bg-red-700" },
-    { title: 11, color: "bg-orange-400" },
-    { title: 12, color: "bg-yellow-400" },
+    { title: "Make Your Stand x Squeegee", image: "mys.png" },
+    { title: "Aigle", image: "aigle.png" },{ title: "Aigle", image: "aigle.png" },{ title: "Aigle", image: "aigle.png" },{ title: "Aigle", image: "aigle.png" },
   ];
   
-  const HoverCard = ({ idproject, text,handler }) => (
-    <div className={`relative select-none bg-[#bdbdbd] min-h-86 h-2/3  min-w-64  outline-4 outline-gris overflow-hidden shadow-abberationrelief translate-y-6 `} onClick={()=>{handler(idproject)}}>
-      <div className="absolute inset-0 hover:bg-black/60 transition duration-300 flex items-center justify-center opacity-80 hover:opacity-100  hover:translate-z-24">
-        <p className="text-white text-lg font-bold">{text}</p>
-      </div>
+  const HoverCard = ({ project, handler }) => {
+    const base = import.meta.env.BASE_URL;
+
+    return (
+      
+  <div     className="relative select-none bg-center bg-cover bg-no-repeat min-h-86 h-2/3  min-w-64 w-92 outline-4 outline-gris overflow-hidden shadow-abberationrelief translate-y-6 "   onClick={()=>{handler(project.title)}}>
+    <img
+          src={`${base}/projects/${project.image}`}
+          alt={project.title}
+          className="object-cover object-top  w-full h-full"
+          loading="lazy"
+        />
+    <div className="absolute inset-0 hover:bg-black/60 transition duration-300 flex items-center justify-center opacity-0 hover:opacity-100  hover:translate-z-24">
+      <p className="text-white text-lg font-bold">{project.title}</p>
     </div>
-  );
+  </div>
+
+
+
+    );
+  };
+  
 
 export default function Projects() {
 
@@ -51,9 +56,9 @@ export default function Projects() {
         <div id='liste' className={`${currentProject!=null?"translate-x-full border-l-[20px] ":"none border-l-4"} w-[95%] bg-[#ababab] border-gris shadow-abberation transition-transform duration-500 right-0 items-right h-[103%]  translate-x-2 -translate-4 ] rotate-x-[2deg] rotate-y-[1deg]  transform-3d justify-center overflow-y-scroll p-4 grid  2xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1   gap-6`}>
           {cards.map((card, index) => (
             <HoverCard
-            idproject={card.title}
+            key={index}
+            project={card}
             handler={handleClick}
-            text={`Projet ${index + 1}`}
             />
           ))}
         </div>

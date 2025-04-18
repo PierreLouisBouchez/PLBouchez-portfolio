@@ -41,11 +41,14 @@ export default function Header({currentMenu,setCurrentMenu}) {
         className="absolute bottom-[17rem] left-[7rem] hover:bg-white blur-xl opacity-50  flex h-[3rem] max-h-[4rem] rounded-2xl w-[4rem] cursor-pointer align-bottom z-50"/>
         
         
-        <div className="absolute w-[90%] h-[80%] p-8 text-3xl text-[#262626] blur-[0.75px] select-none" >
-          <h2 className="text-4xl font-bold w-72">
-            PIERRE-LOUIS BOUCHEZ 
-          </h2>
-          <div className="flex flex-col pt-7 ">
+        <div className="absolute w-[80%] h-[80%] p-8 text-3xl text-[#262626] blur-[0.75px] select-none" >
+          <div className="text-4xl font-bold w-full border-gris border-4 p-2 bg-[#AACCAA] text-5xl shadow-abberationrelief">
+            <div className='underline decoration-[#262626] decoration-2 underline-offset-4'>
+              PIERRE-LOUIS
+              </div>
+              BOUCHEZ               
+          </div>
+          <div className="flex flex-col pt-7 items">
           {Menus.map((menu, index) => (
             <div key={index}>
               <h2
