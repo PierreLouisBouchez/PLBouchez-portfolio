@@ -16,8 +16,8 @@ const cards = [
   ];
   
   const HoverCard = ({ idproject, text,handler }) => (
-    <div className={`relative select-none bg-[#bdbdbd] h-[350px] w-[350px]  outline-4 outline-gris overflow-hidden shadow-abberationrelief `} onClick={()=>{handler(idproject)}}>
-      <div className="absolute inset-0 hover:bg-black/60 transition duration-300 flex items-center justify-center opacity-80 hover:opacity-100">
+    <div className={`relative select-none bg-[#bdbdbd] min-h-86 h-2/3  min-w-64  outline-4 outline-gris overflow-hidden shadow-abberationrelief translate-y-6 `} onClick={()=>{handler(idproject)}}>
+      <div className="absolute inset-0 hover:bg-black/60 transition duration-300 flex items-center justify-center opacity-80 hover:opacity-100  hover:translate-z-24">
         <p className="text-white text-lg font-bold">{text}</p>
       </div>
     </div>
@@ -34,10 +34,10 @@ export default function Projects() {
     };
 
     return (
-      <div className=" flex-1 perspective-normal  h-100vh overflow-hidden">
-        <div className="absolute h-[100%] w-[95%]  translate-x-3 -translate-3 perspective-origin-top-left rotate-x-[2deg] rotate-y-[1deg] -rotate-z-2 transform-3d justify-center overflow-hidden p-4">
+      <div className=" flex-1 perspective-normal perspective-origin-top-left  h-100vh overflow-hidden">
+        <div className="absolute h-[100%] w-[95%]  translate-x-3 -translate-3 rotate-x-[2deg] rotate-y-[1deg] transform-3d justify-center overflow-hidden p-4">
         {(
-          <div className="w-full h-full p-6 border-4 border-t-8 border-r-8 border-gris shadow-abberation bg-white">
+          <div className="w-full h-full p-6 border-4 border-t-8 border-r-8 border-gris shadow-abberation bg-[#ababab] ">
             <div className="w-full h-full border-4 border-t-8 border-r-8 border-gris overflow-hidden bg-radial from-green-950 from-20% to-[#101010]">
               <div className="text-white flex h-16 text-5xl inset-y-15 right-16 absolute  cursor-pointer text-shadow-neonblanc  " onClick={()=>{setCurrentProject(null)}}>{"-->"}</div>
               <div className="p-6 text-6xl select-none text-shadow-neonblanc">
@@ -48,7 +48,7 @@ export default function Projects() {
         )}
 
         </div>
-        <div id='liste' className={`${currentProject!=null?"translate-x-full border-l-[20px] border-gris":"none"} w-[95%] bg-[#ababab] transition-transform duration-500 right-0 items-right h-[103%]  translate-x-2 -translate-4 perspective-origin-top-left rotate-x-[2deg] rotate-y-[1deg] -rotate-z-2 transform-3d justify-center overflow-y-scroll p-4 grid lg:grid-cols-3 grid-cols-2  gap-6`}>
+        <div id='liste' className={`${currentProject!=null?"translate-x-full border-l-[20px] ":"none border-l-4"} w-[95%] bg-[#ababab] border-gris shadow-abberation transition-transform duration-500 right-0 items-right h-[103%]  translate-x-2 -translate-4 ] rotate-x-[2deg] rotate-y-[1deg]  transform-3d justify-center overflow-y-scroll p-4 grid  2xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1   gap-6`}>
           {cards.map((card, index) => (
             <HoverCard
             idproject={card.title}

@@ -1,3 +1,6 @@
+import githubLogo from '/Images/github.png'; // ajuste le chemin si besoin
+
+
 export default function Header({currentMenu,setCurrentMenu}) {
 
     const Menus=
@@ -12,7 +15,19 @@ export default function Header({currentMenu,setCurrentMenu}) {
     return (
       <div className="flex w-[620px] ">
         <div className="w-full h-full bg-cover bg-size-[200%] bg-no-repeat bg-right-bottom  bg-[url(/Images/Untitled.png)]"></div>
-        <a href='https://github.com/PierreLouisBouchez' target="_blank" className="absolute bottom-[4.7rem] left-[2.7rem] flex h-[6.6rem] rounded-2xl cursor-pointer w-[6.6rem] bg-[#ffffff] opacity-0 hover:opacity-15 translate-6 align-bottom"></a>
+        <a href='https://github.com/PierreLouisBouchez' 
+        target="_blank" 
+        className="absolute bottom-[3.3rem] left-[3.7rem] flex h-[6.6rem] rounded-2xl cursor-pointer w-[6.6rem] hover:translate-1 transition-transform align-bottom">
+
+          <img src={githubLogo} alt="Logo GitHub" />
+        </a>
+        
+        
+        
+        
+        
+        
+        
         <div className="absolute w-[90%] h-[80%] p-8 text-3xl text-[#262626] blur-[0.75px] select-none" >
           <h2 className="text-4xl font-bold w-72">
             PIERRE-LOUIS BOUCHEZ 
