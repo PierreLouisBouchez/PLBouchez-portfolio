@@ -2,7 +2,17 @@ import { useState } from "react";
 
 const cards = [
     { title: "Make Your Stand x Squeegee", image: "mys.png" },
-    { title: "Aigle", image: "aigle.png" },{ title: "Aigle", image: "aigle.png" },{ title: "Aigle", image: "aigle.png" },{ title: "Aigle", image: "aigle.png" },
+    { title: "Aigle", image: "aigle.png" },
+    { title: "Lego", image: "lego.png" },
+    { title: "Aigle", image: "aigle.png" },
+    { title: "Aigle", image: "aigle.png" },
+    { title: "Aigle", image: "aigle.png" },
+    { title: "Aigle", image: "aigle.png" },
+    { title: "Aigle", image: "aigle.png" },
+
+    { title: "Aigle", image: "aigle.png" },
+    { title: null, image: "" },
+
   ];
   
   const HoverCard = ({ project, handler }) => {
@@ -11,12 +21,13 @@ const cards = [
     return (
       
   <div     className="relative select-none bg-center bg-cover bg-no-repeat min-h-86 h-2/3  min-w-64 w-92 outline-4 outline-gris overflow-hidden shadow-abberationrelief translate-y-6 "   onClick={()=>{handler(project.title)}}>
-    <img
+    
+    {project.title && <img
           src={`${base}/projects/${project.image}`}
           alt={project.title}
           className="object-cover object-top  w-full h-full"
           loading="lazy"
-        />
+        />}
     <div className="absolute inset-0 hover:bg-black/60 transition duration-300 flex items-center justify-center opacity-0 hover:opacity-100  hover:translate-z-24">
       <p className="text-white text-lg font-bold">{project.title}</p>
     </div>
@@ -39,7 +50,7 @@ export default function Projects() {
     };
 
     return (
-      <div className=" flex-1 perspective-normal perspective-origin-top-left  h-100vh overflow-hidden">
+      <div className=" flex-1 max-w-2/3 perspective-normal perspective-origin-top-left  h-100vh overflow-hidden">
         <div className="absolute h-[100%] w-[95%]  translate-x-3 -translate-3 rotate-x-[2deg] rotate-y-[1deg] transform-3d justify-center overflow-hidden p-4">
         {(
           <div className="w-full h-full p-6 border-4 border-t-8 border-r-8 border-gris shadow-abberation bg-[#ababab] ">
