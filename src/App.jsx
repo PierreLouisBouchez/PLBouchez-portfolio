@@ -5,6 +5,7 @@ import './App.css'
 import Header from './Components/Header'
 import Footer from './Components/Footer'
 import Projects from './Homepage'
+import About from './Components/About'
 
 function App() {
   const [currentMenu,setCurrentMenu]=useState("Project");
@@ -13,8 +14,9 @@ function App() {
     <div className='h-screen w-screen font-Victor flex flex-row bg-[url(/Images/Background.png)]  overflow-x-hidden'>
       <div className="absolute w-screen h-screen opacity-10 z-50 pointer-events-none bg-[url(/Images/Noise.jpg)]"></div>
         <Header currentMenu={currentMenu} setCurrentMenu={setCurrentMenu}/>
-        
-        <Projects/>    
+        {currentMenu == "Project" && <Projects/>}
+        {currentMenu == "About" && <About/>}
+
     </div>
   )
 }
