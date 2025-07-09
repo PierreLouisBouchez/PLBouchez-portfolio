@@ -7,7 +7,7 @@ export default function Header({currentMenu,setCurrentMenu}) {
     const Menus=
       [
         {"title":"ABOUT ME","code":"About"},
-        {"title":"PROJECT","code":"Project","subCategories":[{"title":"Game dev","code":"Games"},{"title":"Web dev","code":"Web"}]},
+        {"title":"PROJECTS","code":"Project","subCategories":[{"title":"Game dev","code":"Games"},{"title":"Web dev","code":"Web"}]},
         {"title":"HOBBY","code":"Hobby"}
 
       ]

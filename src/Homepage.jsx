@@ -82,7 +82,7 @@ export default function Projects() {
         )}
 
       </div>
-      <div id='liste' className={`${currentProject != null ? "translate-x-full  " : "none"}  border-l-6 w-[97%] bg-[#ababab] pl-12 border-gris shadow-abberation transition-transform duration-[2000ms] right-0 items-right h-[103%]  translate-x-8 -translate-4  rotate-x-[2deg] rotate-y-[1deg]  transform-3d justify-center overflow-y-scroll p-4 grid  2xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1   gap-6`}>
+      <div id='liste' className={`${currentProject != null ? "translate-x-full  " : "none"}  border-l-6 w-[97%] bg-[#ababab] pl-12 border-gris shadow-abberation transition-transform duration-[1000ms] right-0 items-right h-[103%]  translate-x-8 -translate-4  rotate-x-[2deg] rotate-y-[1deg]  transform-3d justify-center overflow-y-scroll p-4 grid  2xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1   gap-6`}>
         {cards.map((card, index) => (
           <HoverCard
           key={index}
