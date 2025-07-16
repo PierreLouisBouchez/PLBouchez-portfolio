@@ -6,7 +6,7 @@ import Header from './Components/Header'
 import Footer from './Components/Footer'
 import Projects from './Homepage'
 import About from './Components/About'
-import Background from '/Images/Background.png'
+import Background from '/Images/Background.webp'
 
 function App() {
   const [currentMenu,setCurrentMenu]=useState("Project");

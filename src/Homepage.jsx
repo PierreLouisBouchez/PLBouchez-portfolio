@@ -1,16 +1,16 @@
 import { useRef, useState } from "react";
 
 const cards = [
-  { title: "Bomberman", image: "bomberman.png" , video: "bomberman.webm" },
-  { title: "Briqueton", image: "lego.png", video: "Lego.webm" },
-  { title: "Make Your Stand x Squeegee", image: "mys.png" },
-  { title: "Aigle", image: "aigle.png" },
-  { title: "Aigle", image: "aigle.png" },
-  { title: "Aigle", image: "aigle.png" },
-  { title: "Aigle", image: "aigle.png" },
-  { title: "Aigle", image: "aigle.png" },
+  { title: "Bomberman", image: "bomberman.webp", video: "bomberman.webm", techno: ["Unreal Engine", "C++", "Blender", "Krita"] },
+  { title: "Briqueton", image: "lego.webp", video: "Lego.webm",techno: ["Unreal Engine", "Blender"] },
+  { title: "Make Your Stand", image: "mys.webp" ,techno: ["Unreal Engine", "ReactJS", "Blender","Pixel Streaming"]  },
+  { title: "Game Jam 'One Room'", image: "flyme.webp" ,techno: ["Unreal Engine", "Blender"]  },
+  { title: "Aigle", image: "aigle.webp",techno: ["Unreal Engine", "ReactJS", "Pixel Streaming"]  },
+  { title: "Aigle", image: "aigle.webp" },
+  { title: "Aigle", image: "aigle.webp" },
+  { title: "Aigle", image: "aigle.webp" },
 
-  { title: "Aigle", image: "aigle.png" },
+  { title: "Aigle", image: "aigle.webp" },
   { title: null, image: "" },
 
 ];
@@ -29,7 +29,7 @@ const HoverCard = ({ project, handler }) => {
   };
   return (
 
-    <div className="relative select-none  min-h-86 h-2/3  min-w-64 w-92 outline-2 border-4 border-gris outline-gris overflow-hidden shadow-abberationrelief translate-y-6 " onClick={() => { handler(project.title) }}>
+    <div className="relative select-none  min-h-86 h-2/3  min-w-64 w-92 outline-2 border-4 border-gris outline-gris overflow-hidden shadow-abberationrelief translate-y-6 " onClick={() => { handler(project) }}>
 
       {project.title && <img
         src={`${base}/projects/${project.image}`}
@@ -56,41 +56,57 @@ export default function Projects() {
 
   const [currentProject, setCurrentProject] = useState(null)
 
-  const handleClick = (id) => {
-    console.log(id);
+  const handleClick = (project) => {
+    console.log(project);
 
-    setCurrentProject(currentProject == id ? null : id);
+    setCurrentProject(currentProject && currentProject?.title == project.title ? null : project);
   };
 
   return (
-    <div className=" flex-1 max-w-2/3 perspective-normal perspective-origin-top-left  h-100vh overflow-hidden pl-4">
-      <div className="absolute h-[100%] w-[90%] ml-2 translate-x-3 -translate-3 rotate-x-[2deg] rotate-y-[1deg] transform-3d justify-center  overflow-hidden p-4">
+    <div className="relative flex-1 w-[100%]   h-100vh overflow-hidden pl-4">
+      <div className="absolute h-[100%] w-[85%] ml-2  justify-center  overflow-hidden p-4  z-0">
         {(
-          <div className="w-full h-full p-6 border-4 border-B-6border-r-8 border-gris shadow-abberation bg-[#ababab] ">
+          <div className="w-full h-full p-6 border-4 border-b-6 border-r-8 border-gris shadow-abberation bg-[#ababab] ">
             <div className="absolute h-full w-full bg-[url('/Images/Grid.png')] bg-center bg-cover opacity-30"></div>
 
             <div className="w-full h-full border-4 border-t-8 border-r-8 p-8 border-blur border-gris overflow-hidden bg-radial from-green-950 from-20% to-[#101010]">
-              <div className="h-full w-full border-2 border-vert flex shadow-neonblanc ">
+              <div className="h-full w-full flex-col border-2 border-vert flex shadow-neonblanc ">
 
-              <div className="text-vert flex h-16 text-5xl inset-y-32 right-32 absolute cursor-pointer text-shadow-neonblanc  " onClick={() => { setCurrentProject(null) }}>{"-->"}</div>
-              <div className="p-6 text-6xl select-none text-shadow-neonblanc">
-                {currentProject}
-              </div>
+                <div className="h-24 items-center justify-between px-4 flex flex-row pointer-events-auto ">
+
+                  <div className=" text-6xl select-none text-shadow-neonblanc">
+                    {currentProject?.title}
+                  </div>
+                  <div className="text-vert flex  text-5xl  right-32  cursor-pointer  text-shadow-neonblanc z-5  " onClick={() => { setCurrentProject(null) }}>{"<--"}</div>
+                </div>
+                <div className="flex w-full h-full">
+                  <div className="w-2/3">
+                  </div>
+                  <div className="border-l-2  border-t-2 pt-6 border-vert  shadow-neonblanc  w-1/3">
+                    {
+                      currentProject?.techno && <div className=" relative ">
+                        {currentProject?.techno.map((text) => (
+                          <div className="px-6 items-center text-xl">- {text}</div>
+                        ))}
+                      </div>
+                    }
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         )}
 
       </div>
-      <div id='liste' className={`${currentProject != null ? "translate-x-full  " : "none"}  border-l-6 w-[97%] bg-[#ababab] pl-12 border-gris shadow-abberation transition-transform duration-[1000ms] right-0 items-right h-[103%]  translate-x-8 -translate-4  rotate-x-[2deg] rotate-y-[1deg]  transform-3d justify-center overflow-y-scroll p-4 grid  2xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1   gap-6`}>
+      <div id='liste' className={`${currentProject ? " translate-x-[90%]  " : " "} absolute border-l-6 w-[100%] bg-[#ababab] pl-12 border-gris shadow-abberation transition-transform duration-[500ms] right-0 items-right h-[103%]  justify-center overflow-y-scroll p-4 grid z-50 2xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1   gap-6`}>
         {cards.map((card, index) => (
           <HoverCard
-          key={index}
-          project={card}
-          handler={handleClick}
+            key={index}
+            project={card}
+            handler={handleClick}
           />
         ))}
-        <div className={`absolute top-0 -left-2 border-4  h-[103%] w-[35px] border-gris  bg-[#666666] z-50`}></div>
+        <div className={`absolute top-0 -left-2 border-4 border-t-0  h-[103%] w-[25px] border-gris  bg-[#666666] `}></div>
       </div>
     </div>
   );
