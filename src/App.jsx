@@ -12,10 +12,13 @@ function App() {
   const [currentMenu,setCurrentMenu]=useState("Project");
 
   return (
-    <div className='h-screen w-screen font-Victor flex flex-row bg-[] bg-cover   overflow-x-hidden' style={{backgroundImage: `url(${Background})`}}>
+    <div className='h-screen w-screen font-Victor flex flex-row bg-[] bg-cover bg-bottom-left  overflow-x-hidden' style={{backgroundImage: `url(${Background})`}}>
       <div className="absolute w-screen h-screen opacity-10 z-50 pointer-events-none bg-[url(/Images/Noise.jpg)]"></div>
         <Header currentMenu={currentMenu} setCurrentMenu={setCurrentMenu}/>
-        {currentMenu == "Project" && <Projects/>}
+        <div className={`relative flex-1 w-[100%]  h-[100vh] overflow-hidden transition-transform duration-1000 pl-4 ${currentMenu == "Project" ? "none" : "translate-x-full"}`}>
+
+          <Projects />
+        </div>
         {currentMenu == "About" && <About/>}
 
     </div>
