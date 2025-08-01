@@ -42,7 +42,7 @@ export default function Header({currentMenu,setCurrentMenu}) {
         
         
         <div className="absolute w-[80%] h-[80%] p-8 text-3xl text-[#262626] blur-[0.75px] select-none" >
-          <div className="text-4xl font-bold w-full border-gris border-4 p-2 bg-[#AACCAA] text-5xl shadow-abberationrelief">
+          <div className="text-4xl font-bold w-full border-gris border-4 p-2 bg-[#AACCAA] text-5xl border-r-8 border-b-10 ">
             <div className='underline decoration-[#262626] decoration-2 underline-offset-4'>
               PIERRE-LOUIS
               </div>
