@@ -22,8 +22,18 @@ function App() {
       ]
     ;
 
+  const [offset, setOffset] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e) => {
+    const { innerWidth, innerHeight } = window;
+    const x = (e.clientX / innerWidth - 0.5) * -10; // sensibilité
+    const y = (e.clientY / innerHeight - 0.5) * -10;
+    setOffset({ x, y });
+  };
+
   return (
-    <div className='h-screen w-screen font-Victor flex xl:flex-row flex-col bg-[] bg-cover bg-bottom-left  overflow-x-hidden' style={{backgroundImage: `url(${Background})`}}>
+    <div className='h-screen w-screen font-Victor flex xl:flex-row flex-col bg-[] bg-cover bg-bottom-left  overflow-clip' onMouseMove={handleMouseMove}     >
+      <div className='fixed h-full w-full overflow-clip -z-50'   style={{backgroundImage: `url(${Background})`,          transform: `translate(${offset.x}px, ${offset.y}px) scale(1.05)`,}}></div>
       <div className="absolute w-screen h-screen opacity-10 z-50 pointer-events-none bg-[url(/Images/Noise.jpg)]"></div>
         
         { !isMobile && <Header currentMenu={currentMenu} setCurrentMenu={setCurrentMenu} Menus={Menus}/>

@@ -8,7 +8,7 @@ export default function Header({currentMenu,setCurrentMenu,Menus}) {
 
     return (
       <div className="flex w-[620px] mr-16 perspective-near perspective-origin-bottom-right h-[100vh] ">
-        <div className="w-full h-full bg-cover bg-size-[200%] bg-no-repeat bg-right-bottom  bg-[url(/Images/Untitled.webp)]"></div>
+        <div className="w-full h-full bg-cover bg-size-[200%] bg-no-repeat bg-right-bottom  bg-[url(/Images/Untitled.webp)] "></div>
         <a href='https://github.com/PierreLouisBouchez' 
         target="_blank" 
         className="absolute bottom-[3.3rem]  left-[3.7rem] flex h-[6.6rem] max-h-[6.6rem] rounded-2xl cursor-pointer w-[6.6rem] hover:-translate-z-1 transition-transform align-bottom">
