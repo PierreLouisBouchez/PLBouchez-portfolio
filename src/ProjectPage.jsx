@@ -74,7 +74,7 @@ export default function Projects({ CurrentMenu }) {
                 
                   <div className="flex w-full h-1/4 ">
                     <img
-                      src={`${base}/projects/${currentProject?.image}`}
+                      src={`/projects/${currentProject?.image}`}
                       alt={currentProject?.title}
                       className="  h-full xl:p-4 p-2  rounded-xl  "
                       loading="lazy"
@@ -85,25 +85,25 @@ export default function Projects({ CurrentMenu }) {
 
                   <div className=" w-full h-auto py-4 justify-start items-start min-h-0 xl:overflow-x-scroll overflow-y-auto  cursor-pointer flex flex-col xl:flex-row">
                     <img
-                      src={`${base}/projects/${currentProject?.image}`}
+                      src={`/projects/${currentProject?.image}`}
                       alt={currentProject?.title}
                       className=" h-full p-2 rounded-xl "
                       loading="lazy"
                     />
                     <img
-                      src={`${base}/projects/${currentProject?.image}`}
+                      src={`/projects/${currentProject?.image}`}
                       alt={currentProject?.title}
                       className="  h-full  p-2 rounded-xl  aspect-video  "
                       loading="lazy"
                     />
                     <img
-                      src={`${base}/projects/${currentProject?.image}`}
+                      src={`/projects/${currentProject?.image}`}
                       alt={currentProject?.title}
                       className="  h-full  p-2 rounded-xl    "
                       loading="lazy"
                     />
                     <img
-                      src={`${base}/projects/${currentProject?.image}`}
+                      src={`/projects/${currentProject?.image}`}
                       alt={currentProject?.title}
                       className="  h-full  p-2 rounded-xl    "
                       loading="lazy"
