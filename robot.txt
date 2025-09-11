@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /Images/
+Disallow: /memorygame/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.pierrelouisbouchez.fr/sitemap.xml
