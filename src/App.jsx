@@ -22,18 +22,10 @@ function App() {
       ]
     ;
 
-  const [offset, setOffset] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (e) => {
-    const { innerWidth, innerHeight } = window;
-    const x = (e.clientX / innerWidth - 0.5) * -10; // sensibilité
-    const y = (e.clientY / innerHeight - 0.5) * -10;
-    setOffset({ x, y });
-  };
+  
 
   return (
-    <div className='h-screen w-screen font-Victor flex xl:flex-row flex-col bg-[] bg-cover bg-bottom-left  overflow-clip' onMouseMove={handleMouseMove}     >
-      <div className='fixed h-full w-full overflow-clip -z-50'   style={{backgroundImage: `url(${Background})`,          transform: `translate(${offset.x}px, ${offset.y}px) scale(1.05)`,}}></div>
+    <div className={`h-screen w-screen font-Victor flex xl:flex-row flex-col bg-[url(/Images/Background.webp)] bg-cover bg-bottom-left  overflow-clip`}    >
       <div className="absolute w-screen h-screen opacity-10 z-50 pointer-events-none bg-[url(/Images/Noise.jpg)]"></div>
         
         { !isMobile && <Header currentMenu={currentMenu} setCurrentMenu={setCurrentMenu} Menus={Menus}/>
@@ -41,12 +33,17 @@ function App() {
         
 
         { isMobile && <HeaderMobile currentMenu={currentMenu} setCurrentMenu={setCurrentMenu} Menus={Menus}/>}
-        <div className={`relative flex-1 w-[100%]  h-[100vh] overflow-hidden transition-transform duration-1000 xl:pl-4 ${currentMenu == "Project" ? "none" : "translate-x-full"}`}>
+        
+        <div className='flex-1 relative flex overflow-hidden'>
 
-          <Projects />
+          <div className={`absolute w-[100%]  h-[100vh] overflow-hidden transition-transform duration-1000 xl:pl-4 ${currentMenu == "Project" ? "none" : "translate-x-full"}`}>
+            <Projects />
+          </div>
+          <div className={`absolute  w-[100%]  h-[100vh] overflow-hidden transition-transform duration-1000 xl:pl-4 ${currentMenu == "About" ? "none" : "translate-x-full"}`}>
+
+            {currentMenu == "About" && <About/>}
+          </div>
         </div>
-        {currentMenu == "About" && <About/>}
-
     </div>
   )
 }

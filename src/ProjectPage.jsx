@@ -83,32 +83,20 @@ export default function Projects({ CurrentMenu }) {
                   </div>
 
 
-                  <div className=" w-full h-auto py-4 justify-start items-start min-h-0 xl:overflow-x-scroll overflow-y-auto  cursor-pointer flex flex-col xl:flex-row">
-                    <img
+                  <div className="w-full   text-center text-5xl font-bold mt-4 text-shadow-neonblanc">
+
+                    Site en Construction
+                  </div>
+
+                  {/* <div className=" w-full h-auto py-4 justify-start items-start min-h-0 xl:overflow-x-scroll overflow-y-auto  cursor-pointer flex flex-col xl:flex-row">
+                     <img
                       src={`/projects/${currentProject?.image}`}
                       alt={currentProject?.title}
                       className=" h-full p-2 rounded-xl "
                       loading="lazy"
-                    />
-                    <img
-                      src={`/projects/${currentProject?.image}`}
-                      alt={currentProject?.title}
-                      className="  h-full  p-2 rounded-xl  aspect-video  "
-                      loading="lazy"
-                    />
-                    <img
-                      src={`/projects/${currentProject?.image}`}
-                      alt={currentProject?.title}
-                      className="  h-full  p-2 rounded-xl    "
-                      loading="lazy"
-                    />
-                    <img
-                      src={`/projects/${currentProject?.image}`}
-                      alt={currentProject?.title}
-                      className="  h-full  p-2 rounded-xl    "
-                      loading="lazy"
-                    />
-                  </div>
+                    /> 
+                    
+                  </div> */}
               </div>
 
 
