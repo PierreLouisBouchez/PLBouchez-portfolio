@@ -30,7 +30,7 @@ export default function About(){
         <div className=" h-full p-12"> 
         
             <div className="relative select-none h-full w-full    grid grid-cols-3 grid-rows-2 gap-4 " >
-                    <h2 className="text-gris  top-0 left-0 p-4 h-full outline-2 bg-gray-300  text-2xl font-bold lg:border-2 border-gris outline-gris  lg:shadow-abberationrelief">
+                    <h2 className="text-gris grid-item h-full   ">
                         <img
                             src={`/Images/pp.png`}
                             alt={"Pierre-Louis Bouchez"}
@@ -38,7 +38,7 @@ export default function About(){
                             loading="lazy"
                         />
                     </h2>
-                <h2 className="text-gris  top-0 left-0 p-4 h-full outline-2 bg-gray-300 col-start-2 col-span-2 text-2xl font-bold lg:border-2 border-gris outline-gris  lg:shadow-abberationrelief">
+                <h2 className="text-gris grid-item h-full  col-start-2 col-span-2 ">
                     Bonjour !<br/>
                     Je m'appelle Pierre-Louis Bouchez, un développeur passionné de 25 ans basé à Lille, France. Avec une expertise en développement web et une passion pour la création de jeux vidéo, je suis toujours à la recherche de nouveaux défis et opportunités pour apprendre et grandir dans le domaine de la technologie.
                 </h2>

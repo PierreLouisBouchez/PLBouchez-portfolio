@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Victor+Mono:wght@100..700&display=swap');
 @import "tailwindcss";
 
+
+
 @theme {
   --shadow-abberationrelief: -4px 7px 0px rgba(42,42,42,1), 0.5px 0px 1px rgba(255, 0, 0, 0.5),-4.5px 2px 1px rgba(0, 0, 255, 0.5); 
   --shadow-abberation:  0.5px -0.5px 2px rgba(255, 0, 0, 0.5),-0.5px 0.5px 2px rgba(0, 0, 255, 0.5); 
@@ -13,7 +15,25 @@
   --color-gris: #262626;
   --color-rose: #aba7ab;
   --color-vert: #a1ffee;
+
+  
 }
+
+
+a,img {
+  -webkit-user-drag: none; /* Safari & Chrome */
+  -khtml-user-drag: none;  /* Ancien Konqueror (très legacy) */
+  -moz-user-select: none;  /* Firefox : empêche la sélection */
+  -ms-user-select: none;   /* IE/Edge ancien */
+  user-drag: none;         /* Standard non officiel */
+  user-select: none;       /* Empêche la sélection */
+}
+
+
+@utility grid-item {
+  @apply outline-2 p-4 bg-gray-300 lg:border-2 border-gris outline-gris  lg:shadow-abberationrelief text-2xl font-bold ;
+}
+
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;

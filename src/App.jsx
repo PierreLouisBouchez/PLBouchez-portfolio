@@ -8,6 +8,7 @@ import Projects from './ProjectPage'
 import About from './Components/About'
 import Background from '/Images/Background.webp'
 import HeaderMobile from './Components/HeaderMobile'
+import Hobby from './Components/Hobby'
 
 function App() {
   const [currentMenu,setCurrentMenu]=useState("Project");
@@ -42,6 +43,10 @@ function App() {
           <div className={`absolute  w-[100%]  h-[100vh] overflow-hidden transition-transform duration-1000 xl:pl-4 ${currentMenu == "About" ? "none" : "translate-x-full"}`}>
 
             {currentMenu == "About" && <About/>}
+          </div>
+          <div className={`absolute  w-[100%]  h-[100vh] overflow-hidden transition-transform duration-1000 xl:pl-4 ${currentMenu == "Hobby" ? "none" : "translate-x-full"}`}>
+
+            {currentMenu == "Hobby" && <Hobby/>}
           </div>
         </div>
     </div>
