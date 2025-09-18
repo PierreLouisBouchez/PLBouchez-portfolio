@@ -7,8 +7,8 @@ const cards = [
   { title: "Bomberman", image: "bomberman.webp", video: "bomberman.webm", logo: "unreal.webp", techno: ["Unreal Engine", "C++", "Blender", "Krita"] },
   { title: "Make Your Stand", image: "mys.webp", logo: "unreal.webp", techno: ["Unreal Engine", "ReactJS", "Blender", "Pixel Streaming"] },
   { title: "Aigle", image: "aigle.webp", logo: "react.webp", techno: ["Unreal Engine", "ReactJS", "Pixel Streaming"] },
-  { title: "Restootab", image: "restootab.webp", logo: "react.webp", techno: ["Unreal Engine", "ReactJS", "Pixel Streaming"] },
-  { title: "Aigle", image: "", techno: ["Unreal Engine", "ReactJS", "Pixel Streaming"] },
+  { title: "Restootab", image: "restootab.webp",video: "restootab.webm", logo: "react.webp", techno: ["Unreal Engine", "ReactJS", "Pixel Streaming"] },
+  { title: "Ville Renouvelée", image: "roubaix.webp",video:"Roubaix.webm",logo: "unreal.webp", techno: ["Unreal Engine", "Blender"] },
 
 ];
 
