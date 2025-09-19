@@ -26,11 +26,11 @@ export default function Hobby() {
 
   return (
         <div className="h-full scroll-auto overflow-y-scroll  p-12"> 
-            <div className="relative select-none h-full w-full    grid grid-cols-3  gap-4 " >
-                <div className='grid-item text-gris grid'>
+            <div className="relative select-none h-full w-full    grid md:grid-cols-3 grid-cols-2 gap-4 " >
+                <div className='grid-item grid-end-2 col-span-2 h-16 text-gris grid'>
                     Illustation/dessin
-                </div><div></div>
-      <div></div>
+                </div>
+                <div className='xl:col-auto col-span-2'></div>
                 {images.map((src, i) => (
                     <img key={i} src={src} alt={`Illustration ${i}`} className="grid-item p-0 shadow-lg" />
                 ))}
