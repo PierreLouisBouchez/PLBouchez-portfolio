@@ -7,7 +7,7 @@ const cards = [
   { title: "Bomberman", image: "bomberman.webp", video: "bomberman.webm", logo: "unreal.webp", techno: ["Unreal Engine", "C++", "Blender", "Krita"] },
   { title: "Make Your Stand", image: "mys.webp", logo: "unreal.webp", techno: ["Unreal Engine", "ReactJS", "Blender", "Pixel Streaming"] },
   { title: "Aigle", image: "aigle.webp", logo: "react.webp", techno: ["Unreal Engine", "ReactJS", "Pixel Streaming"] },
-  { title: "Restootab", image: "restootab.webp",video: "restootab.webm", logo: "react.webp", techno: ["Unreal Engine", "ReactJS", "Pixel Streaming"] },
+  { title: "Restootab", image: "restootab.webp",video: "restootab.webm", logo: "react.webp", techno: ["Blender", "ReactJS","Shopify"] },
   { title: "Ville Renouvelée", image: "roubaix.webp",video:"Roubaix.webm",logo: "unreal.webp", techno: ["Unreal Engine", "Blender"] },
 
 ];
@@ -65,8 +65,8 @@ export default function Projects({ CurrentMenu }) {
                   <div className="flex flex-col h-auto w-full py-2">
                     {
                       currentProject?.techno && <div className="flex flex-wrap">
-                        {currentProject?.techno.map((text) => (
-                          <div className="pl-4 bold items-center lg:text-xl text-sm">{text} |</div>
+                        {currentProject?.techno.map((text,index) => (
+                          <div className="pl-4 bold items-center lg:text-xl text-sm">{text } {(index < currentProject?.techno.length-1 ? "|": "")}</div>
                         ))}
                       </div>
                     }
@@ -85,7 +85,6 @@ export default function Projects({ CurrentMenu }) {
 
                   <div className="w-full   text-center text-5xl font-bold mt-4 text-shadow-neonblanc">
 
-                    Site en Construction
                   </div>
 
                   {/* <div className=" w-full h-auto py-4 justify-start items-start min-h-0 xl:overflow-x-scroll overflow-y-auto  cursor-pointer flex flex-col xl:flex-row">

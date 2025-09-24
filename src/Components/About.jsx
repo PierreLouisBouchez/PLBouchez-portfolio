@@ -29,12 +29,12 @@ export default function About(){
     return (
         <div className=" h-full xl:p-12"> 
         
-            <div className="relative select-none h-full w-full    grid xl:grid-cols-3 grid-cols-2 grid-rows-2 xl:gap-4 border-red-500 border" >
+            <div className="relative select-none h-full w-full    grid xl:grid-cols-3 grid-cols-2 grid-rows-2 xl:gap-4 " >
                     <h2 className="text-gris grid-item h-full xl:col-auto col-span-2 items-center flex justify-center  ">
                         <img
-                            src={`/Images/pp.png`}
+                            src={`/Images/pp.webp`}
                             alt={"Pierre-Louis Bouchez"}
-                            className=" h-full object-cover lg:border-2 border-gris outline-gris outline-2  "
+                            className=" h-full w-full object-cover lg:border-2 border-gris outline-gris outline-2  "
                             loading="lazy"
                         />
                     </h2>
