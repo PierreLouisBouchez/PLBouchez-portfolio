@@ -75,7 +75,7 @@ export default function Projects({ CurrentMenu }) {
                   <div className="flex w-full h-1/4 ">
                     <img
                       src={`/projects/${currentProject?.image}`}
-                      alt={currentProject?.title}
+                      alt={"Image du projet " + currentProject?.title}
                       className="  h-full xl:p-4 p-2  rounded-xl  "
                       loading="lazy"
                     />
