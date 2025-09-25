@@ -1,16 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import HoverCard from "./Components/hovercard";
+import { ListProject } from "./assets/projects";
 
-const cards = [
-  { title: "Game Jam 'One\u00A0Room'", image: "flyme.webp", logo: "unreal.webp", techno: ["Unreal Engine", "Blender"],Description:"Projet réalisé en trio courant 2025. Dans ce projet je me suis principalement occupé de la partie 3d (Environnement, Player, Level Design), pendant que mes coéquipiers se sont occupés du Gameplay et de l'Audio. Le But du jeu est de trouver et délivrer les mouches caché dans la pièce, en esquivant les pièges" },
-  { title: "Briqueton", image: "lego.webp", video: "Lego.webm", logo: "unreal.webp", techno: ["Unreal Engine", "Blender"], Description:"Projet réalisé en 2024 à l'occasion d'un challenge proposé par le Youtuber @MATHIEU_YT. Dans ce projet je me suis principalement occupé de la partie 3d (Environnement, Player, Level Design), pendant que mon coéquipier s'est occupé du Gameplay et de l'Audio." },
-  { title: "Bomberman", image: "bomberman.webp", video: "bomberman.webm", logo: "unreal.webp", techno: ["Unreal Engine", "C++", "Blender", "Krita"] },
-  { title: "Make Your Stand", image: "mys.webp", logo: "unreal.webp", techno: ["Unreal Engine", "ReactJS", "Blender", "Pixel Streaming"] },
-  { title: "Aigle", image: "aigle.webp", logo: "react.webp", techno: ["Unreal Engine", "ReactJS", "Pixel Streaming"] },
-  { title: "Restootab", image: "restootab.webp",video: "restootab.webm", logo: "react.webp", techno: ["Blender", "ReactJS","Shopify"] },
-  { title: "Ville Renouvelée", image: "roubaix.webp",video:"Roubaix.webm",logo: "unreal.webp", techno: ["Unreal Engine", "Blender"] },
-
-];
 
 
 
@@ -41,28 +32,20 @@ export default function Projects({ CurrentMenu }) {
 
 
   return (
-    <div className=" h-full overflow-hidden xl:pl-4">
+    <div className=" xl:h-full h-auto overflow-hidden xl:pl-4">
       <div className="absolute h-[100%] xl:w-[90%] w-full xl:ml-2  justify-center  overflow-hidden xl:p-4  z-0">
         {(
           <div className="relative w-full h-full xl:p-6 xl:border-4 xl:border-b-6 xl:border-r-8 border-gris xl:shadow-abberation bg-[#ababab] ">
-
             <div className="absolute h-full w-full z-0 bg-[url('/Images/Grid.png')] bg-center bg-cover opacity-30 pointer-events-none"></div>
-
-            <div className="w-full h-full xl:border-4 z-20 xl:border-t-8 xl:border-r-8 lg:p-8 border-blur border-gris overflow-hidden bg-radial from-green-950 from-20% to-[#101010]">
-              
-              
-              
-              
-              
+            <div className="w-full h-full xl:border-4 z-20 xl:border-t-8 xl:border-r-8 lg:p-8 border-blur border-gris overflow-clip bg-radial from-green-950 from-20% to-[#101010]">
               <div className="h-full w-full flex-col lg:border-2 lg:border-vert flex lg:shadow-neonblanc ">
                 <div className="h-20 items-center justify-between px-4 flex flex-row pointer-events-auto ">
-
                     <div className=" lg:text-4xl text-2xl select-none  text-shadow-neonblanc">
                       {currentProject?.title}
                     </div>
                     <div className="text-vert  xl:block hidden  lg:text-5xl text-2xl right-32  cursor-pointer  text-shadow-neonblanc z-5  " onClick={() => { handleReturn() }}>{"<--"}</div>
                   </div>
-                  <div className="flex flex-col h-auto w-full py-2">
+                  <div className="flex flex-row justify-between h-auto w-full py-2">
                     {
                       currentProject?.techno && <div className="flex flex-wrap">
                         {currentProject?.techno.map((text,index) => (
@@ -70,41 +53,24 @@ export default function Projects({ CurrentMenu }) {
                         ))}
                       </div>
                     }
-                  </div>
-                
-                  <div className="flex w-full h-1/4 ">
+                    {currentProject?.Link && <a href={currentProject?.Link} target="_blank"className="pr-6 bold items-center cursor-pointer text-gris hover:text-white font-bold mx-2 px-4 py-1 lg:text-2xl text-sm  bg-vert rounded-4xl"> Lien -{">"} </a>}
+                  </div>                
+                  <div className="flex w-full h-1/4 items-center justify-center ">
                     <img
                       src={`/projects/${currentProject?.image}`}
                       alt={"Image du projet " + currentProject?.title}
-                      className="  h-full xl:p-4 p-2  rounded-xl  "
+                      className="  xl:h-full xl:p-4 p-2 h-[75%] justify-center items-center  "
                       loading="lazy"
                     />
-                    <div className="flex flex-col xl:w-2/3  h-full justify-start items-center p-2 text-sm xl:text-lg rounded-xl ">{currentProject?.Description}</div>
+                    <div className="flex flex-col xl:w-2/3 w-3/4 h-full justify-start items-center p-2 text-sm xl:text-lg rounded-xl ">{currentProject?.Description}</div>
                   </div>
-
-
-                  <div className="w-full   text-center text-5xl font-bold mt-4 text-shadow-neonblanc">
-
-                  </div>
-
-                  {/* <div className=" w-full h-auto py-4 justify-start items-start min-h-0 xl:overflow-x-scroll overflow-y-auto  cursor-pointer flex flex-col xl:flex-row">
-                     <img
-                      src={`/projects/${currentProject?.image}`}
-                      alt={currentProject?.title}
-                      className=" h-full p-2 rounded-xl "
-                      loading="lazy"
-                    /> 
+                  <div className=" w-full h-auto  py-4 justify-start items-center min-h-0 xl:overflow-x-auto xl:overflow-y-clip overflow-y-scroll  cursor-pointer xl:flex flex-col xl:flex-row">
+                     {currentProject?.Gallery && currentProject?.Gallery.map((img, index) => (
+                        <img src={"/projects/"+img} alt={"Image du projet " + currentProject?.title + " n°" + (index + 1)} className="h-auto xl:mx-4 mx-2 my-2 " loading="lazy" key={index} />
+                     ))}
                     
-                  </div> */}
+                  </div> 
               </div>
-
-
-
-
-
-
-
-
             </div>
           </div>
         )}
@@ -126,7 +92,7 @@ export default function Projects({ CurrentMenu }) {
 
         <div className="grid w-full grid-cols-2 xl:grid-cols-3 h-full overflow-y-scroll lg:p-4  justify-start xl:gap-6 lg:gap-4 gap-0.5 ">
 
-          {cards.map((card, index) => (
+          {ListProject.map((card, index) => (
             <HoverCard
               key={index}
               project={card}
