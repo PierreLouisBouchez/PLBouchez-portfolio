@@ -61,7 +61,8 @@ export const ListProject = [
       "Unreal Engine",
       "ReactJS",
       "Pixel Streaming"
-    ]
+    ],
+    "Link":"https://www.aigle.com/fr/fr/t-kit-module3d.html"
   },
   {
     "title":"Restootab",
@@ -72,7 +73,9 @@ export const ListProject = [
       "Blender",
       "ReactJS",
       "Shopify"
-    ]
+    ],
+    "Link":"https://www.restootab.com/pages/configurateur",
+    "Description":"Projet réalisé en 2025 pour l'entreprise Restootab. Le but du projet était de créer un configurateur de tables de restaurant, permettant aux clients de personnaliser leur tables et de la commander directement en ligne."
   },
   {
     "title":"Ville Renouvelée",
