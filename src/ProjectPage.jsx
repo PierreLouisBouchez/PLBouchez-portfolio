@@ -9,6 +9,7 @@ export default function Projects({ CurrentMenu }) {
 
   const [currentProject, setCurrentProject] = useState(null);
   const [inProjectList, setInProjectList] = useState(true)
+  const isMobile = window.innerWidth < 768 || window.innerHeight - window.innerWidth > 0;
 
   const base = import.meta.env.BASE_URL;
 
@@ -33,6 +34,7 @@ export default function Projects({ CurrentMenu }) {
   const containerRef = useRef(null);
 
   useEffect(() => {
+    if(isMobile) return;
     const container = containerRef.current;
 
     const handleWheel = (e) => {
@@ -82,9 +84,17 @@ export default function Projects({ CurrentMenu }) {
                     />
                     <div className="flex flex-col xl:w-2/3 w-3/4 h-full justify-start items-center p-2 text-sm xl:text-lg rounded-xl ">{currentProject?.Description}</div>
                   </div>
-                  <div   style={{ scrollBehavior: "smooth", clipPath: "ellipse(200% 98% at 50% 100%)",       WebkitClipPath: "ellipse(100% 80% at 50% 100%)" }}     ref={containerRef} className="  w-full h-[calc(100%-5)]  justify-start items-center min-h-0 xl:overflow-x-auto xl:overflow-y-clip overflow-y-scroll  cursor-pointer xl:flex flex-col xl:flex-row">
+                  <div   style={
+    !isMobile
+      ? {
+          scrollBehavior: "smooth",
+          clipPath: "ellipse(200% 100% at 50% 100%)",
+          WebkitClipPath: "ellipse(100% 80% at 50% 100%)",
+        }
+      : {}
+  }     ref={containerRef} className="  w-full h-[calc(100%-5)]  justify-start items-center min-h-0 xl:overflow-x-auto xl:overflow-y-clip overflow-y-scroll xl:pb-0 pb-12 cursor-pointer xl:flex flex-col xl:flex-row">
                      {currentProject?.Gallery && currentProject?.Gallery.map((img, index) => (
-                        <img src={"/projects/"+img} alt={"Image du projet " + currentProject?.title + " n°" + (index + 1)} className=" h-full w-auto xl:mx-4 mx-2 my-2 " loading="lazy" key={index} />
+                        <img src={"/projects/"+img} alt={"Image du projet " + currentProject?.title + " n°" + (index + 1)} className=" xl:h-full w-auto xl:mx-4 mx-2 my-2 " loading="lazy" key={index} />
                      ))}
                     
                   </div> 
