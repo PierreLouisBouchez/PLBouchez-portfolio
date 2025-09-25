@@ -5,7 +5,8 @@ import { useEffect, useState } from 'react';
 
 export default function Header({currentMenu,setCurrentMenu,Menus}) {
     const [intensity,setIntensity] = useState(0)
-
+    const [indexColor,setIndexColor]= useState(0);
+    const colors=["red","blue","green","yellow","purple"]
 
     useEffect(() => {
       const strobe =setInterval(()=>{
@@ -21,8 +22,9 @@ export default function Header({currentMenu,setCurrentMenu,Menus}) {
 
     return (
       <div className="flex w-[620px] mr-16 perspective-near perspective-origin-bottom-right h-[100vh] ">
-        <div className="w-full h-full bg-cover bg-size-[200%] bg-no-repeat bg-right-bottom  bg-[url(/Images/Untitled.webp)] ">
-        <div className={` absolute   h-6 w-6 rounded-full ${intensity<50?"blur-xs bg-white border-5 border-red-700":"bg-red-900 blur-xs"}  bottom-[1.3rem] left-[29.35rem] `} >
+        <div className="w-full h-full bg-cover bg-size-[200%] bg-no-repeat bg-right-bottom  bg-[url(/Images/Untitled.webp)] ">      </div>
+
+        <div className={` absolute  cursor-grab h-6 w-6 rounded-full ${intensity<50?"blur-xs bg-white border-5 border-red-700":"bg-red-900 blur-xs"}  bottom-[1.3rem] left-[29.35rem] `}  >
         </div>
         <div>
           <svg className='absolute bottom-[7.1rem] left-[27.7rem] blur-[0.5px]' xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 100 100" role="img" aria-labelledby="title">
@@ -84,7 +86,6 @@ export default function Header({currentMenu,setCurrentMenu,Menus}) {
           ))}
           </div>
         </div>
-      </div>
       </div>
     )
   };
