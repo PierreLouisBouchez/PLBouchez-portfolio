@@ -62,6 +62,14 @@ export const ListProject = [
       "ReactJS",
       "Pixel Streaming"
     ],
+    "Gallery":[
+      "aigle1.webp",
+      "aigle2.webp",
+      "aigle3.webp",
+      "aigle4.webp",
+      "aigle5.webp"
+    ],
+    "Description":"Projet de configurateur de parkas modulaires pour la marque Aigle, la combinaison d'une application web et d'un application Unreal Engine en Pixel streaming à permis de tirer la meilleur partie de chaque technologie.  ",
     "Link":"https://www.aigle.com/fr/fr/t-kit-module3d.html"
   },
   {

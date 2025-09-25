@@ -1,14 +1,47 @@
 import githubLogo from '/Images/github.png'; // ajuste le chemin si besoin
 import LinkedinLogo from '/Images/Linkedin.png'; // ajuste le chemin si besoin
 import InstagramLogo from '/Images/Instagram.png'; // ajuste le chemin si besoin
+import { useEffect, useState } from 'react';
 
 export default function Header({currentMenu,setCurrentMenu,Menus}) {
+    const [intensity,setIntensity] = useState(0)
 
+
+    useEffect(() => {
+      const strobe =setInterval(()=>{
+        
+        setIntensity(value=>(value+50)%100);
+      },500)
+    
+      return () => {
+        clearInterval(strobe);     
+      }
+    }, [intensity]);
     
 
     return (
       <div className="flex w-[620px] mr-16 perspective-near perspective-origin-bottom-right h-[100vh] ">
-        <div className="w-full h-full bg-cover bg-size-[200%] bg-no-repeat bg-right-bottom  bg-[url(/Images/Untitled.webp)] "></div>
+        <div className="w-full h-full bg-cover bg-size-[200%] bg-no-repeat bg-right-bottom  bg-[url(/Images/Untitled.webp)] ">
+        <div className={` absolute   h-6 w-6 rounded-full ${intensity<50?"blur-xs bg-white border-5 border-red-700":"bg-red-900 blur-xs"}  bottom-[1.3rem] left-[29.35rem] `} >
+        </div>
+        <div>
+          <svg className='absolute bottom-[7.1rem] left-[27.7rem] blur-[0.5px]' xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 100 100" role="img" aria-labelledby="title">
+{/*               <circle cx="50" cy="50" r="1.6" fill="#222"/>
+ */}              <line x1="50" y1="35" x2="50" y2="16" stroke="#262626" stroke-width="6" stroke-linecap="sqaure">
+                    <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="4s" repeatCount="indefinite" calcMode="discrete"
+                      keyTimes="0;0.083;0.166;0.25;0.333;0.416;0.5;0.583;0.666;0.75;0.833;0.916;1"
+                      values="0 50 50;30 50 50;60 50 50;90 50 50;120 50 50;150 50 50;180 50 50;210 50 50;240 50 50;270 50 50;300 50 50;330 50 50;360 50 50"/>              
+                  </line>
+            </svg>
+        </div>
+        
+
+
+
+
+
+
+
         <a href='https://github.com/PierreLouisBouchez' 
         target="_blank" 
         className="absolute bottom-[3.3rem]  left-[3.7rem] flex h-[6.6rem] max-h-[6.6rem] rounded-2xl cursor-pointer w-[6.6rem] hover:-translate-z-1 transition-transform align-bottom">
@@ -51,6 +84,7 @@ export default function Header({currentMenu,setCurrentMenu,Menus}) {
           ))}
           </div>
         </div>
+      </div>
       </div>
     )
   };

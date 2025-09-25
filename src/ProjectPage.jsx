@@ -30,6 +30,24 @@ export default function Projects({ CurrentMenu }) {
     console.log(CurrentMenu);
   }, [CurrentMenu])
 
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+
+    const handleWheel = (e) => {
+      if (container) {
+        e.preventDefault(); // empêche le scroll vertical par défaut
+        container.scrollLeft += e.deltaY *2; // transforme le scroll vertical en horizontal
+      }
+    };
+
+    container.addEventListener("wheel", handleWheel, { passive: false });
+
+    return () => {
+      container.removeEventListener("wheel", handleWheel);
+    };
+  }, []);
 
   return (
     <div className=" xl:h-full h-auto overflow-hidden xl:pl-4">
@@ -64,9 +82,9 @@ export default function Projects({ CurrentMenu }) {
                     />
                     <div className="flex flex-col xl:w-2/3 w-3/4 h-full justify-start items-center p-2 text-sm xl:text-lg rounded-xl ">{currentProject?.Description}</div>
                   </div>
-                  <div className=" w-full h-auto  py-4 justify-start items-center min-h-0 xl:overflow-x-auto xl:overflow-y-clip overflow-y-scroll  cursor-pointer xl:flex flex-col xl:flex-row">
+                  <div   style={{ scrollBehavior: "smooth", clipPath: "ellipse(200% 98% at 50% 100%)",       WebkitClipPath: "ellipse(100% 80% at 50% 100%)" }}     ref={containerRef} className="  w-full h-[calc(100%-5)]  justify-start items-center min-h-0 xl:overflow-x-auto xl:overflow-y-clip overflow-y-scroll  cursor-pointer xl:flex flex-col xl:flex-row">
                      {currentProject?.Gallery && currentProject?.Gallery.map((img, index) => (
-                        <img src={"/projects/"+img} alt={"Image du projet " + currentProject?.title + " n°" + (index + 1)} className="h-auto xl:mx-4 mx-2 my-2 " loading="lazy" key={index} />
+                        <img src={"/projects/"+img} alt={"Image du projet " + currentProject?.title + " n°" + (index + 1)} className=" h-full w-auto xl:mx-4 mx-2 my-2 " loading="lazy" key={index} />
                      ))}
                     
                   </div> 
