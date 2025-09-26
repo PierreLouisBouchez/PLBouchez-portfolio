@@ -75,21 +75,19 @@ export default function Projects({ CurrentMenu }) {
                     }
                     {currentProject?.Link && <a href={currentProject?.Link} target="_blank"className="pr-6 bold items-center cursor-pointer text-gris hover:text-white font-bold mx-2 px-4 py-1 lg:text-2xl text-sm  bg-vert rounded-4xl"> Lien -{">"} </a>}
                   </div>                
-                  <div className="flex w-full h-1/4 items-center justify-center ">
+                  <div className="flex  h-1/4 items-center justify-between  ">
                     <img
                       src={`/projects/${currentProject?.image}`}
                       alt={"Image du projet " + currentProject?.title}
                       className="  xl:h-full xl:p-4 p-2 h-[75%] justify-center items-center  "
                       loading="lazy"
                     />
-                    <div className="flex flex-col xl:w-2/3 w-3/4 h-full justify-start items-center p-2 text-sm xl:text-lg rounded-xl ">{currentProject?.Description}</div>
+                    <div className="flex flex-col xl:w-auto w-3/4 h-full justify-start items-center p-2 text-sm xl:text-lg rounded-xl ">{currentProject?.Description}</div>
                   </div>
                   <div   style={
     !isMobile
       ? {
           scrollBehavior: "smooth",
-          clipPath: "ellipse(200% 100% at 50% 100%)",
-          WebkitClipPath: "ellipse(100% 80% at 50% 100%)",
         }
       : {}
   }     ref={containerRef} className="  w-full h-[calc(100%-5)]  justify-start items-center min-h-0 xl:overflow-x-auto xl:overflow-y-clip overflow-y-scroll xl:pb-0 pb-12 cursor-pointer xl:flex flex-col xl:flex-row">

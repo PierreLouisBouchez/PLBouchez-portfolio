@@ -82,8 +82,13 @@ export const ListProject = [
       "ReactJS",
       "Shopify"
     ],
+    "Gallery":[
+      "restootab0.avif",
+      "restootab1.avif",
+      "restootab2.avif"
+    ],
     "Link":"https://www.restootab.com/pages/configurateur",
-    "Description":"Projet réalisé en 2025 pour l'entreprise Restootab. Le but du projet était de créer un configurateur de tables de restaurant, permettant aux clients de personnaliser leur tables et de la commander directement en ligne."
+    "Description":"Projet réalisé en 2025 pour l'entreprise Restootab. Le but du projet était de créer un configurateur de tables de restaurant, permettant aux clients de personnaliser leur tables et de la commander directement en ligne. Le plus gros défi étant de génerer les plateaux de maniere procédural pour toutes le dimensions et formes disponibles"
   },
   {
     "title":"Ville Renouvelée",
@@ -94,5 +99,21 @@ export const ListProject = [
       "Unreal Engine",
       "Blender"
     ]
+  },
+  {
+    "title":"Aktid",
+    "image":"aktid.avif",
+    "logo":"unreal.webp",
+    "techno":[
+      "Unreal Engine",
+      "Blender"
+    ],
+    "Gallery":[
+      "aktid0.avif",
+      "aktid1.avif",
+      "aktid2.avif",
+      "aktid3.avif",
+    ],
+    "Description":"Projet réalisé en 2025. Le but du projet était de créer une plateforme gaming pour présenter les technologies modernes de centre de tri proposer chez Aktid. Composé de 9 mini-jeux présentant chaque technologie 'Smart' .Le jeu est présenté lors de salon et d'événement interne.",
   }
 ];
