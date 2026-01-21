@@ -31,13 +31,22 @@ export default function HoverCard({ project, handler} )  {
               loading="lazy"
             />
           }
-          {project.logo &&
-            <img
-              src={`/Images/${project.logo}`}
-              alt={project.title}
-              className="absolute z-50 object-cover pointer-events-none h-[15%] rounded-4xl backdrop-blur-xs right-2 bottom-2   w-auto "
-              loading="lazy"
-            />}
+          <div>
+
+          {project?.logo && (
+            <div className="absolute flex z-50 gap-2 object-cover pointer-events-none h-[15%] rounded-4xl backdrop-blur-xs right-2 bottom-2   w-auto">
+              {project.logo.map((logo, index) => (
+                <img
+                  key={index}
+                  src={`/Images/${logo}.webp`}
+                  alt={logo}
+                  className="h-full w-auto"
+                  loading="lazy"
+                />
+              ))}
+            </div>
+          ) }
+          </div>
           <div className="absolute  duration-300  flex items-end  z-50  w-full h-full  justify-center xl:opacity-0 xl:hover:opacity-100 cursor-pointer transition-opacity  ">
             <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="  h-full  w-full object-cover">
               <video ref={videoRef} src={`/videos/${project.video}`} className="h-full object-cover pointer-events-none select-none [&::-webkit-media-controls]:hidden" controls={false} muted defaultMuted loop autoPlay preload='auto'   playsInline />

@@ -2,7 +2,10 @@ export const ListProject = [
   {
     "title":"Game Jam 'One\u00A0Room'",
     "image":"flyme.webp",
-    "logo":"unreal.webp",
+    "logo":[
+      "blender",
+      "unreal"
+    ],
     "techno":[
       "Unreal Engine",
       "Blender"
@@ -17,22 +20,11 @@ export const ListProject = [
     "Link":"https://vraus.itch.io/fly-me-to-the-room"    
 },
   {
-    "title":"Briqueton",
-    "image":"lego.webp",
-    "video":"Lego.webm",
-    "logo":"unreal.webp",
-    "techno":[
-      "Unreal Engine",
-      "Blender"
-    ],
-    "Description":"Projet réalisé en 2024 à l'occasion d'un challenge proposé par le Youtuber @MATHIEU_YT. Dans ce projet je me suis principalement occupé de la partie 3d (Environnement, Player, Level Design), pendant que mon coéquipier s'est occupé du Gameplay et de l'Audio."
-  },
-  {
     "title":"Invaders Ampli",
     "image":"invaders.webp",
     "video":"invaders.webm",
 
-    "logo":"react.webp",
+    "logo":["blender","react"],
     "techno":[
       "Blender",
       "Photoshop",
@@ -44,13 +36,13 @@ export const ListProject = [
       "invaders2.webp",
       "invaders3.webp",
     ],
-    "Description":"Projet réalisé en 2025. Configurateur d'amplificateur.",
+    "Description":"Projet réalisé en 2025 et 2026. Un configurateur d'amplificateur, permettant de visualiser en 3D et de personnaliser son ampli. Dans ce projet j'ai eu l'oocassion de modéliser et créer les textures de toutes les amplis disponibles.",
   },
   {
     "title":"Winncare",
     "image":"winncare.webp",
 
-    "logo":"react.webp",
+    "logo":["blender","react"],
     "techno":[
       "Blender",
       "Photoshop",
@@ -64,13 +56,24 @@ export const ListProject = [
       "winncare4.webp",
 
     ],
-    "Description":"Projet réalisé en 2025. Configurateur d'amplificateur.",
+    "Description":"Projet réalisé en 2025 et 2026. Le projet consistait à créer un configurateur de lit médicalisé de A à Z pour l'entreprise Winncare. Lors de ce projet j'ai pu améliorer mes compétences en 3D comme l'optimisation et le rigging des modèles.",
+  },
+  {
+    "title":"Briqueton",
+    "image":"lego.webp",
+    "video":"Lego.webm",
+    "logo":["blender","unreal"],
+    "techno":[
+      "Unreal Engine",
+      "Blender"
+    ],
+    "Description":"Projet réalisé en 2024 à l'occasion d'un challenge proposé par le Youtuber @MATHIEU_YT. Dans ce projet je me suis principalement occupé de la partie 3d (Environnement, Player, Level Design), pendant que mon coéquipier s'est occupé du Gameplay et de l'Audio."
   },
   {
     "title":"Bomberman",
     "image":"bomberman.webp",
     "video":"bomberman.webm",
-    "logo":"unreal.webp",
+    "logo":["blender","unreal"],
     "techno":[
       "Unreal Engine",
       "C++",
@@ -83,7 +86,7 @@ export const ListProject = [
     "title":"Ville Renouvelée",
     "image":"roubaix.webp",
     "video":"Roubaix.webm",
-    "logo":"unreal.webp",
+    "logo":["blender","unreal"],
     "techno":[
       "Unreal Engine",
       "Blender"
@@ -92,7 +95,7 @@ export const ListProject = [
   {
     "title":"Aktid",
     "image":"aktid.avif",
-    "logo":"unreal.webp",
+    "logo":["unreal"],
     "techno":[
       "Unreal Engine",
       "Blender"
