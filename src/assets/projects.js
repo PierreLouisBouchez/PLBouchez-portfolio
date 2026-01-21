@@ -47,6 +47,26 @@ export const ListProject = [
     "Description":"Projet réalisé en 2025. Configurateur d'amplificateur.",
   },
   {
+    "title":"Winncare",
+    "image":"winncare.webp",
+
+    "logo":"react.webp",
+    "techno":[
+      "Blender",
+      "Photoshop",
+      "ReactJS"
+    ],
+    "Gallery":[
+      "winncare0.webp",
+      "winncare1.webp",
+      "winncare2.webp",
+      "winncare3.webp",
+      "winncare4.webp",
+
+    ],
+    "Description":"Projet réalisé en 2025. Configurateur d'amplificateur.",
+  },
+  {
     "title":"Bomberman",
     "image":"bomberman.webp",
     "video":"bomberman.webm",
