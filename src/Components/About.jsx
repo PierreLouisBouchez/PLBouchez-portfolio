@@ -38,10 +38,13 @@ export default function About(){
                             loading="lazy"
                         />
                     </h2>
-                <h2 className="text-gris grid-item h-full  col-span-2 ">
-                    Bonjour !<br/>
-                    Je m'appelle Pierre-Louis Bouchez, un développeur passionné de 25 ans basé à Lille, France. Avec une expertise en développement web et une passion pour la création de jeux vidéo, je suis toujours à la recherche de nouveaux défis et opportunités pour apprendre et grandir dans le domaine de la technologie.
-                </h2>
+                <div className="text-gris relative grid-item h-full p-8 col-span-2 ">
+                    Hello  !<br/>
+                    Je suis Pierre-Louis Bouchez, un développeur passionné de {new Date().getFullYear() - 1999 -(new Date() < new Date(new Date().getFullYear(), 2, 11)) + " "} ans.
+                    <br/> 
+                     
+                <div className="text-gris hover:text-gris/50 scale-y-100  absolute bottom-1 right-1 flex justify-center items-center w-auto cursor-pointer ">Suivant {"   "} <div className="px-4  scale-x-200 scale-y-50"> V</div> </div>
+                </div>
             </div>
         </div>
     )

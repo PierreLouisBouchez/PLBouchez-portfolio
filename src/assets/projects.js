@@ -28,6 +28,25 @@ export const ListProject = [
     "Description":"Projet réalisé en 2024 à l'occasion d'un challenge proposé par le Youtuber @MATHIEU_YT. Dans ce projet je me suis principalement occupé de la partie 3d (Environnement, Player, Level Design), pendant que mon coéquipier s'est occupé du Gameplay et de l'Audio."
   },
   {
+    "title":"Invaders Ampli",
+    "image":"invaders.webp",
+    "video":"invaders.webm",
+
+    "logo":"react.webp",
+    "techno":[
+      "Blender",
+      "Photoshop",
+      "ReactJS"
+    ],
+    "Gallery":[
+      "invaders0.webp",
+      "invaders1.webp",
+      "invaders2.webp",
+      "invaders3.webp",
+    ],
+    "Description":"Projet réalisé en 2025. Configurateur d'amplificateur.",
+  },
+  {
     "title":"Bomberman",
     "image":"bomberman.webp",
     "video":"bomberman.webm",
