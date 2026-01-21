@@ -14,7 +14,7 @@ function App() {
       [
         {"title":"ABOUT ME","code":"About"},
         {"title":"PROJECTS","code":"Project","subCategories":[{"title":"Game dev","code":"Games"},{"title":"Web dev","code":"Web"}]},
-        {"title":"HOBBY","code":"Hobby"}
+        {"title":"2D & 3D","code":"Hobby"}
 
       ]
     ;

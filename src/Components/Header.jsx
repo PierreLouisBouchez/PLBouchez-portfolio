@@ -66,7 +66,7 @@ export default function Header({currentMenu,setCurrentMenu,Menus}) {
 
         <a href='https://letterboxd.com/paouis/' 
         target="_blank" 
-        className="absolute bottom-[17rem] left-[7rem] hover:bg-white blur-xl opacity-50  flex h-[3rem] max-h-[4rem] rounded-2xl w-[4rem] cursor-pointer align-bottom z-50"/>
+        className="absolute bottom-[17rem] left-[9.5rem] hover:bg-white blur-xl opacity-50  flex h-[3rem] max-h-[4rem] rounded-2xl w-[4rem] cursor-pointer align-bottom z-50"/>
         
         
         <div className="absolute w-[28rem] h-[80%] p-8 text-3xl text-[#262626] blur-[0.75px] select-none" >
