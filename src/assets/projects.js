@@ -68,6 +68,16 @@ export const ListProject = [
       "Blender"
     ],
     "Description":"Projet réalisé en 2024 à l'occasion d'un challenge proposé par le Youtuber @MATHIEU_YT. Dans ce projet je me suis principalement occupé de la partie 3d (Environnement, Player, Level Design), pendant que mon coéquipier s'est occupé du Gameplay et de l'Audio."
+  },{
+    "title":"Differential",
+    "image":"differential.webp",
+    "video":"differential.webm",
+    "logo":["blender","unreal"],
+    "techno":[
+      "Unreal Engine",
+      "Blender"
+    ],
+    "Description":"Projet réalisé en 2024 à l'occasion d'un challenge proposé par le Youtuber @MATHIEU_YT. Dans ce projet je me suis principalement occupé de la partie 3d (Environnement, Player, Level Design), pendant que mon coéquipier s'est occupé du Gameplay et de l'Audio."
   },
   {
     "title":"Bomberman",
