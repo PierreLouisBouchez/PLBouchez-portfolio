@@ -2,3 +2,61 @@
 h1{
     font-size: 3rem;
 }
+
+
+/* Custom Slider Styles */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Track (the line) - right portion at 20% opacity */
+input[type="range"]::-webkit-slider-runnable-track {
+  background: gray;
+  height: 4px;
+  border-radius: 0;
+}
+
+input[type="range"]::-moz-range-track {
+  background:   gray;
+  height: 1px;
+  border-radius: 0;
+}
+
+/* Thumb (the handle) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--color-black);
+  height: 15px;
+  width: 8px;
+  border-radius: 0;
+  margin-top: -5.5px;
+  /* Centers thumb on track */
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  background: var(--color-black);
+  height: 12px;
+  width: 8px;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+/* Focus styles */
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+  background: var(--color-black);
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+  background: var(--color-black);
+}
