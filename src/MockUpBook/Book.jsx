@@ -52,14 +52,14 @@ export default function Book({ position, rotation,infos }) {
     const halfcoverdepth=coverdepth/2
 
     const pagestexture = useTexture("3D/maps/pages.jpg")
-    const pattern = useTexture("3D/maps/pattern.jpg")
+    const pattern = useTexture("3D/maps/pattern2.jpg")
 
     pagestexture.wrapS =  RepeatWrapping;
     pagestexture.wrapT = RepeatWrapping;
     pagestexture.repeat.set(0.25, infos.depth*10   );
     pattern.wrapS =  RepeatWrapping;
     pattern.wrapT = RepeatWrapping;
-    pattern.repeat.set(6,6);
+    pattern.repeat.set(90,120);
 
 
     const defaultMaterial = new MeshStandardMaterial({
@@ -69,7 +69,9 @@ export default function Book({ position, rotation,infos }) {
     metalness: 0,
     });
     const defaultMaterial2 = new MeshStandardMaterial({
-        color: "#ff5555",
+        map:pattern,
+        color: "#ff7755",
+        roughnessMap: pattern,
         roughness: 0.5,
         metalness: 0,
     });
@@ -110,7 +112,7 @@ export default function Book({ position, rotation,infos }) {
            
             <mesh position={[0,0,-infos.height/2]} geometry={geometry} material={defaultMaterial2}></mesh>
             
-            <mesh ref={pages} position={[0,infos?.depth/2,0]} castShadow material={defaultMaterial} >
+            <mesh ref={pages} position={[infos?.hardcover?-infos?.coverdepth/2:0,infos?.depth/2,0]} castShadow material={defaultMaterial} >
                 <boxGeometry  args={[infos?.width-coverdepth, infos?.depth-infos.coverdepth, infos?.height-coverdepth]} />
             </mesh>
            
