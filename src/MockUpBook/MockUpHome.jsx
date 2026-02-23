@@ -55,8 +55,8 @@ function MockUpHome() {
                     </div>
                 </div>
             </div>
-            <Canvas className="h-full md:w-2/3 w-full md:order-2 order-0" shadows camera={{ position:  [-3, 1, 4] , fov: 35 }} >
-                <hemisphereLight intensity={0.4} color={0xffffff} />
+            <Canvas className="h-full md:w-2/3 w-full md:order-2 order-0" shadows camera={{ position:  [3, 1.2, 3] , fov: 35 }} >
+                <hemisphereLight intensity={0.8} color={0xffffff} />
                 <directionalLight position={[-2, 2, 2]} intensity={2} />
                 <Book position={[0,0,-bookInfos?.depth/2]} rotation={[1.57,0,0]} infos={bookInfos} />
                 <AccumulativeShadows position={[0,-bookInfos?.height/2,0]}  temporal  frames={30} color={"#000039"} opacity={0.5} scale={5}>
