@@ -34,7 +34,7 @@ function MockUpHome() {
                             <option key={"Aucun"} >Select a preset</option>
 
                             {presets && Object.keys(presets).map((item) => (
-                                <option key={item} value={item}>{presets[item]?.detail}</option>
+                                <option key={item} value={item}>{item}:{presets[item]?.detail}</option>
                             ))}                                
                         </select>
                     </div>
