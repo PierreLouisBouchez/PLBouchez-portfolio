@@ -17,17 +17,14 @@ const presets = {
 
 function MockUpHome() {
 
-    const [bookInfos, setbookInfos] = useState({ depth: 0.2, width: 1, height: 1.5 });
+    const [bookInfos, setbookInfos] = useState({ depth: 0.2, width: 1.05, height: 1.485 ,coverdepth:0.001, hardcover:false});
 
     return (
         <div className='h-[100vh] md:flex-row flex-col order flex bg-[#eeeeee] border-[#613a00] text-gray-800 font-Victor '>
-            <div className='p-4 md:w-1/3 w-full order-1 text-xl'>
-                <div className='flex flex-col h-full p-4 border-gray-800 border-2 gap-y-2  bg-[#ababab]'>
-                    <h1 className='relative md:text-5xl! text-xl!  font-bold pb-2 text-shadow-black text-shadow-xs '>Mock A Book</h1>
-                    <div className='h-auto bg-gray-300 w-full flex-col flex p-2 border-2'>
-                        <span>Depth : {(bookInfos?.depth * 10).toFixed(2)} cm </span>
-                        <input className='py-2  h-full justify-items-center rounded-none  ' type='range' min={0.05} max={1} step={0.01} value={bookInfos?.depth} onChange={(e) => setbookInfos({ ...bookInfos, depth: e.target.value })} />
-                    </div>
+            <div className=' md:w-1/3 w-full md:h-full h-1/3 pb-0 p-4 md:pb-4 order-1 md:text-xl  '>
+                <div className='flex flex-col  h-full overflow-scroll p-4 border-gray-800 border-2 gap-y-2  bg-[#ababab]'>
+                    
+                                <h1 className='relative md:text-5xl! text-xl!  font-bold pb-2 text-shadow-black text-shadow-xs '>Mock A Book</h1>
                     <div className=' relative flex mt-4'>
                         <span className='font-bold'>Preset : </span>
                         <div className=' border-1'>
@@ -42,22 +39,30 @@ function MockUpHome() {
                     </div>
                     <div className='h-auto bg-gray-300   w-full flex-col flex p-2  border-2'>
                         <span>Width : {(bookInfos?.width * 10).toFixed(2)} cm </span>
-                        <input className='py-2 h-full justify-items-center rounded-none  ' type='range' min={1} max={3} step={0.01} value={bookInfos?.width} onChange={(e) => setbookInfos({ ...bookInfos, width: e.target.value })} />
-                    </div>
-                    <div className='h-auto bg-gray-300  w-full flex-col flex p-2 border-2'>
+                        <input className='py-2 h-full justify-items-center rounded-none  ' type='range' min={1} max={3} step={0.01} value={bookInfos?.width} onChange={(e) => setbookInfos({ ...bookInfos, width: parseFloat(e.target.value) })} />
+                    
                         <span>Height : {(bookInfos?.height * 10).toFixed(2)} cm </span>
-                        <input className='py-2  h-full justify-items-center rounded-none  ' type='range' min={1} max={4} step={0.01} value={bookInfos?.height} onChange={(e) => setbookInfos({ ...bookInfos, height: e.target.value })} />
+                        <input className='py-2  h-full justify-items-center rounded-none  ' type='range' min={1} max={4} step={0.01} value={bookInfos?.height} onChange={(e) => setbookInfos({ ...bookInfos, height: parseFloat(e.target.value) })} />
+                    </div>
+                    <div className='h-auto bg-gray-300 w-full flex-col flex p-2 border-2'>
+                        <span>Depth : {(bookInfos?.depth * 10).toFixed(2)} cm ≈ {Math.ceil(bookInfos?.depth * 1250)} pages </span>
+                        <input className='py-2  h-full justify-items-center rounded-none  ' type='range' min={0.05} max={1} step={0.01} value={bookInfos?.depth} onChange={(e) => setbookInfos({ ...bookInfos, depth: parseFloat(e.target.value) })} />
+                        <div className='py-4 flex items-center h-auto '><span>Hardcover :    </span><input checked={bookInfos?.hardcover} className='ml-2 overflow-hidden w-6 items-center mt-1 h-full custom-checkbox ' type='checkbox' onChange={(e)=>{setbookInfos({ ...bookInfos, hardcover: e.target.checked, coverdepth: e.target.checked ? 0.01 : 0.001}); }} /></div>
+                        {bookInfos?.hardcover && (<>
+                        <span>Cover thickness : {(bookInfos?.coverdepth * 10).toFixed(2)} cm  </span>
+                        <input className='py-2  h-full justify-items-center rounded-none  ' type='range' min={0.01} max={0.025} step={0.001} value={bookInfos?.coverdepth} onChange={(e) => setbookInfos({ ...bookInfos, coverdepth: parseFloat(e.target.value) })} />
+                        </>)}
                     </div>
                 </div>
             </div>
-            <Canvas className="h-full md:w-2/3 w-full md:order-2 order-0" shadows camera={{ position: [2, 2.5, 2], fov: 35 }} >
-                <hemisphereLight intensity={1} color={0xffff88} />
-                <directionalLight position={[-1, 4, 2]} intensity={3} />
-                <Book infos={bookInfos} />
-                <AccumulativeShadows  temporal  frames={10} color={"#000039"} opacity={0.25} scale={3}>
-                    <RandomizedLight amount={10} radius={6} position={[-1, 3, 2]} />
+            <Canvas className="h-full md:w-2/3 w-full md:order-2 order-0" shadows camera={{ position:  [-3, 1, 4] , fov: 35 }} >
+                <hemisphereLight intensity={0.4} color={0xffffff} />
+                <directionalLight position={[-2, 2, 2]} intensity={2} />
+                <Book position={[0,0,-bookInfos?.depth/2]} rotation={[1.57,0,0]} infos={bookInfos} />
+                <AccumulativeShadows position={[0,-bookInfos?.height/2,0]}  temporal  frames={30} color={"#000039"} opacity={0.5} scale={5}>
+                    <RandomizedLight amount={5} radius={4} position={[1, 4, 1]} />
                 </AccumulativeShadows>
-                <CameraControls />
+                <CameraControls makeDefault maxDistance={7} minDistance={1.5}/>
             </Canvas>
 
 

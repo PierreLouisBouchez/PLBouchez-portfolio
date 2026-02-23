@@ -13,6 +13,39 @@ input[type="range"] {
   width: 100%;
 }
 
+ 
+
+.custom-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 20px;
+  height: 20px;
+  
+  border: 2px solid #525252;   /* bordure */
+  background-color: rgb(115, 115, 115);  /* fond */
+  cursor: pointer;
+  position: relative;
+}
+
+
+.custom-checkbox:checked {
+  background-color: #e48e2b; /* fond checked */
+  border-color: #000000;     /* bordure checked */
+}
+
+
+.custom-checkbox:checked::after {
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  position: absolute;
+  left: 0px;
+  top:-13px
+}
+
+
+
+
 /* Track (the line) - right portion at 20% opacity */
 input[type="range"]::-webkit-slider-runnable-track {
   background: gray;

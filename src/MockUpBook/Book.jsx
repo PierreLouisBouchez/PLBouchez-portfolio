@@ -1,10 +1,49 @@
 import { Box, RoundedBoxGeometry, useTexture } from '@react-three/drei'
-import React, { useEffect, useRef } from 'react'
-import { BoxGeometry, MeshStandardMaterial, RepeatWrapping } from 'three'
+import React, { useEffect, useMemo, useRef } from 'react'
+import { BoxGeometry, ExtrudeGeometry, MeshStandardMaterial, RepeatWrapping, Shape } from 'three'
+
+function SoftCover(width, depth, coverdepth=0.01, hardcover=false) {
+    const shape = new Shape();
+    const hCoffset=0.05;
+    shape.lineTo(width/2, 0);
+    shape.lineTo(width/2, coverdepth);
+    if(hardcover){
+        shape.lineTo(-width/2+coverdepth+hCoffset, coverdepth);
+        shape.quadraticCurveTo(-width/2+coverdepth+hCoffset*0.2, coverdepth-0.01,-width/2+coverdepth, coverdepth);
+            shape.quadraticCurveTo(-width/2-hCoffset*0.3, depth/2,-width/2+coverdepth, depth-coverdepth);
+
+        shape.quadraticCurveTo(-width/2+coverdepth+hCoffset*0.2, depth-coverdepth+0.01,-width/2+coverdepth+hCoffset, depth-coverdepth);
+
+    }else{
+        shape.lineTo(-width/2+coverdepth, coverdepth);
+        shape.lineTo(-width/2+coverdepth, depth-coverdepth);
+    }
+    
+    
+    shape.lineTo(width/2, depth-coverdepth);
 
 
+    shape.lineTo(width/2, depth);    
+        if(!hardcover){
+            shape.lineTo(-width/2, depth);
+            shape.lineTo(-width/2, 0);
 
-export default function Book({ infos }) {
+        }else{
+
+            shape.lineTo(-width/2+hCoffset*1.5, depth);
+            
+            shape.quadraticCurveTo(-width/2+hCoffset*0.6, depth-0.5*coverdepth,-width/2+hCoffset/4, depth);
+            shape.lineTo(-width/2, depth);
+            shape.quadraticCurveTo(-width/2-0.04, depth*0.5,-width/2, 0);
+            shape.lineTo(-width/2+hCoffset/4, 0);
+            shape.quadraticCurveTo(-width/2+hCoffset*0.6, 0.5*coverdepth,-width/2+hCoffset*1.5, 0);
+        }
+
+
+    return shape;
+}
+
+export default function Book({ position, rotation,infos }) {
     const pages = useRef(null)
     const front = useRef(null)
     const back = useRef(null)
@@ -20,7 +59,8 @@ export default function Book({ infos }) {
     pagestexture.repeat.set(0.25, infos.depth*10   );
     pattern.wrapS =  RepeatWrapping;
     pattern.wrapT = RepeatWrapping;
-    pattern.repeat.set(infos.width*8, infos.height*8  );
+    pattern.repeat.set(6,6);
+
 
     const defaultMaterial = new MeshStandardMaterial({
         map: pagestexture,
@@ -29,8 +69,7 @@ export default function Book({ infos }) {
     metalness: 0,
     });
     const defaultMaterial2 = new MeshStandardMaterial({
-        map: pattern,
-        color: "#cc5555",
+        color: "#ff5555",
         roughness: 0.5,
         metalness: 0,
     });
@@ -45,21 +84,36 @@ export default function Book({ infos }) {
 
     }, [infos])
 
+    console.log("height : " ,infos?.height)
+
+    const shape = SoftCover(infos?.width, infos?.depth,infos?.coverdepth,infos?.hardcover);
+
+    
+
+    const extrudeSettings = { 
+            depth: infos?.height, 
+            bevelEnabled:  infos?.hardcover, 
+            bevelThickness: 0.005,
+            bevelSize: 0.005,
+            curveSegments: 16 
+        };
+
+    const geometry = useMemo(() => {
+        const geo = new ExtrudeGeometry(shape, extrudeSettings);
+        geo.computeVertexNormals();
+        return geo;
+    }, [shape, infos?.height]);
+
 
     return (
-        <group position={[0,infos?.depth/2+halfcoverdepth,0]}>
-            <mesh  position={[0, infos?.depth / 2 + halfcoverdepth, 0]} ref={front} material={[defaultMaterial,defaultMaterial2,defaultMaterial2,defaultMaterial,defaultMaterial,defaultMaterial]}>
-                <boxGeometry  args={[infos?.width , coverdepth, infos?.height]}  />
+        <group position={position} rotation={rotation} >
+           
+            <mesh position={[0,0,-infos.height/2]} geometry={geometry} material={defaultMaterial2}></mesh>
+            
+            <mesh ref={pages} position={[0,infos?.depth/2,0]} castShadow material={defaultMaterial} >
+                <boxGeometry  args={[infos?.width-coverdepth, infos?.depth-infos.coverdepth, infos?.height-coverdepth]} />
             </mesh>
-            <mesh ref={pages} castShadow material={defaultMaterial} >
-                <boxGeometry  args={[infos?.width-coverdepth, infos?.depth, infos?.height-coverdepth]} />
-            </mesh>
-            <mesh  rotation={[0,3.1415,0]} castShadow position={[0, -infos?.depth / 2 - halfcoverdepth, 0]} ref={back} material={[defaultMaterial2,defaultMaterial,defaultMaterial,defaultMaterial2,defaultMaterial,defaultMaterial]} >
-                <boxGeometry  args={[infos?.width , coverdepth, infos?.height]} />
-            </mesh>
-            <mesh rotation={[-1.57079,0,0]} castShadow position={[-infos?.width * 0.5+halfcoverdepth, 0, 0]}  ref={side} material={[defaultMaterial,defaultMaterial3,defaultMaterial,defaultMaterial,defaultMaterial,defaultMaterial]} >
-                <boxGeometry  args={[coverdepth, infos?.height, infos?.depth]}  />
-            </mesh>
+           
         </group>
     )
 }
