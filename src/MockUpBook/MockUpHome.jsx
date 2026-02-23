@@ -50,8 +50,8 @@ function MockUpHome() {
                 </div>
             </div>
             <Canvas className="h-full md:w-2/3 w-full md:order-2 order-0" shadows camera={{ position: [1, 2, 1], fov: 60 }} >
-                <hemisphereLight intensity={0.75} color={0xffff88} />
-                <directionalLight position={[-1, 4, 2]} intensity={2} />
+                <hemisphereLight intensity={1} color={0xffff88} />
+                <directionalLight position={[-1, 4, 2]} intensity={3} />
                 <Book infos={bookInfos} />
                 <CameraControls />
             </Canvas>
