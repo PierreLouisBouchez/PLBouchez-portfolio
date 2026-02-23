@@ -41,11 +41,11 @@ function MockUpHome() {
                 </div>
                 <div className='h-auto bg-gray-300   w-full flex-col flex p-2  border-2'>
                     <span>Width : {(bookInfos?.width * 10).toFixed(2)} cm </span>
-                    <input className='py-2 h-full justify-items-center rounded-none  ' type='range' min={1} max={10} step={0.01} value={bookInfos?.width} onChange={(e) => setbookInfos({ ...bookInfos,width: e.target.value })} />
+                    <input className='py-2 h-full justify-items-center rounded-none  ' type='range' min={1} max={3} step={0.01} value={bookInfos?.width} onChange={(e) => setbookInfos({ ...bookInfos,width: e.target.value })} />
                 </div>
                 <div className='h-auto bg-gray-300  w-full flex-col flex p-2 border-2'>
                     <span>Height : {(bookInfos?.height * 10).toFixed(2)} cm </span>
-                    <input className='py-2  h-full justify-items-center rounded-none  ' type='range' min={1} max={5} step={0.01} value={bookInfos?.height} onChange={(e) => setbookInfos({ ...bookInfos,height: e.target.value })} />
+                    <input className='py-2  h-full justify-items-center rounded-none  ' type='range' min={1} max={4} step={0.01} value={bookInfos?.height} onChange={(e) => setbookInfos({ ...bookInfos,height: e.target.value })} />
                 </div>
             </div>
             </div>
