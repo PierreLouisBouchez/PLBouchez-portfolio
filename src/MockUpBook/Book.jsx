@@ -47,17 +47,17 @@ export default function Book({ infos }) {
 
 
     return (
-        <group>
+        <group position={[0,infos?.depth/2+halfcoverdepth,0]}>
             <mesh  position={[0, infos?.depth / 2 + halfcoverdepth, 0]} ref={front} material={[defaultMaterial,defaultMaterial2,defaultMaterial2,defaultMaterial,defaultMaterial,defaultMaterial]}>
                 <boxGeometry  args={[infos?.width , coverdepth, infos?.height]}  />
             </mesh>
-            <mesh ref={pages} material={defaultMaterial} >
+            <mesh ref={pages} castShadow material={defaultMaterial} >
                 <boxGeometry  args={[infos?.width-coverdepth, infos?.depth, infos?.height-coverdepth]} />
             </mesh>
-            <mesh rotation={[0,3.1415,0]} position={[0, -infos?.depth / 2 - halfcoverdepth, 0]} ref={back} material={[defaultMaterial2,defaultMaterial,defaultMaterial,defaultMaterial2,defaultMaterial,defaultMaterial]} >
+            <mesh  rotation={[0,3.1415,0]} castShadow position={[0, -infos?.depth / 2 - halfcoverdepth, 0]} ref={back} material={[defaultMaterial2,defaultMaterial,defaultMaterial,defaultMaterial2,defaultMaterial,defaultMaterial]} >
                 <boxGeometry  args={[infos?.width , coverdepth, infos?.height]} />
             </mesh>
-            <mesh rotation={[-1.57079,0,0]}  position={[-infos?.width * 0.5+halfcoverdepth, 0, 0]}  ref={side} material={[defaultMaterial,defaultMaterial3,defaultMaterial,defaultMaterial,defaultMaterial,defaultMaterial]} >
+            <mesh rotation={[-1.57079,0,0]} castShadow position={[-infos?.width * 0.5+halfcoverdepth, 0, 0]}  ref={side} material={[defaultMaterial,defaultMaterial3,defaultMaterial,defaultMaterial,defaultMaterial,defaultMaterial]} >
                 <boxGeometry  args={[coverdepth, infos?.height, infos?.depth]}  />
             </mesh>
         </group>
