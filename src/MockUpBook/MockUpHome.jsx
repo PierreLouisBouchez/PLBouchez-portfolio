@@ -27,10 +27,10 @@ function MockUpHome() {
                     <span>Depth : {(bookInfos?.depth * 10).toFixed(2)} cm </span>
                     <input className='py-2  h-full justify-items-center rounded-none  ' type='range' min={0.05} max={1} step={0.01} value={bookInfos?.depth} onChange={(e) => setbookInfos({ ...bookInfos, depth: e.target.value })} />
                 </div>
-                <div className=' relative flex'>
-                    <span>Preset : </span>
+                <div className=' relative flex mt-4'>
+                    <span className='font-bold'>Preset : </span>
                     <div className=' border-1'>
-                        <select className='bg-green-300/50' onChange={(e)=> { const tmp =presets[e.target.value]; if(tmp){setbookInfos({...bookInfos,width:tmp.width,height:tmp.height})}}} >
+                        <select className='bg-green-300/50 border-1' onChange={(e)=> { const tmp =presets[e.target.value]; if(tmp){setbookInfos({...bookInfos,width:tmp.width,height:tmp.height})}}} >
                             <option key={"Aucun"} >Select a preset</option>
 
                             {presets && Object.keys(presets).map((item) => (
