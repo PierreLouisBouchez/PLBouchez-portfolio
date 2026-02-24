@@ -17,19 +17,19 @@ const presets = {
 
 function MockUpHome() {
 
-    const [bookInfos, setbookInfos] = useState({ depth: 0.2, width: 1.05, height: 1.485 ,coverdepth:0.001, hardcover:false});
+    const [bookInfos, setbookInfos] = useState({ depth: 0.53, width: 1.05, height: 1.485 ,coverdepth:0.001, hardcover:false});
 
     return (
         <div className='h-[100vh] md:flex-row flex-col order flex bg-[#eeeeee] border-[#613a00] text-gray-800 font-Victor '>
-            <div className=' md:w-1/3 w-full md:h-full h-1/3 pb-0 p-4 md:pb-4 order-1 md:text-xl  '>
-                <div className='flex flex-col  h-full overflow-scroll p-4 border-gray-800 border-2 gap-y-2  bg-[#ababab]'>
+            <div className=' md:w-1/3 w-full flex md:h-full h-1/3 pb-0 md:p-4 md:pb-4 order-1 md:text-xl  '>
+                <div className='flex flex-col  h-full overflow-y-auto p-4 border-gray-800 border-2 md:gap-y-6 gap-y-2  bg-[#ababab]'>
                     
                                 <h1 className='relative md:text-5xl! text-xl!  font-bold pb-2 text-shadow-black text-shadow-xs '>Mock A Book</h1>
                     <div className=' relative flex mt-4'>
                         <span className='font-bold'>Preset : </span>
-                        <div className=' border-1'>
-                            <select className='bg-green-300/50 border-1' onChange={(e) => { const tmp = presets[e.target.value]; if (tmp) { setbookInfos({ ...bookInfos, width: tmp.width, height: tmp.height }) } }} >
-                                <option key={"Aucun"} >Select a preset</option>
+                        <div className='px-2 '>
+                            <select className='bg-green-300/50 border-2 ' onChange={(e) => { const tmp = presets[e.target.value]; if (tmp) { setbookInfos({ ...bookInfos, width: tmp.width, height: tmp.height }) } }} >
+                                <option className='' key={"Aucun"} >Select a preset</option>
 
                                 {presets && Object.keys(presets).map((item) => (
                                     <option key={item} value={item}>{item}:{presets[item]?.detail}</option>
@@ -54,8 +54,13 @@ function MockUpHome() {
                         </>)}
                     </div>
                 </div>
+                <div className='relative h-full w-12 pt-24 '>
+                    <div className='border-2 border-l-0 h-32 pt-4  w-full bg-[#ababab]'> </div>
+                    <div className='border-2 border-l-0 border-t-0 h-32 pt-4  w-full bg-gray-300'> </div>
+
+                </div>
             </div>
-            <Canvas className="h-full md:w-2/3 w-full md:order-2 order-0" shadows camera={{ position:  [3, 1.2, 3] , fov: 35 }} >
+            <Canvas className="h-full md:w-2/3 w-full md:order-2 order-0" shadows camera={{ position:  [-2.5, 1.2, 3] , fov: 30 }} >
                 <hemisphereLight intensity={0.8} color={0xffffff} />
                 <directionalLight position={[-2, 2, 2]} intensity={2} />
                 <Book position={[0,0,-bookInfos?.depth/2]} rotation={[1.57,0,0]} infos={bookInfos} />
