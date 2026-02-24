@@ -27,12 +27,12 @@ function MockUpHome() {
             <div className=' md:w-1/3 w-full flex flex-col md:h-full h-1/3 pb-0 md:p-4 md:pb-4 order-1 md:text-xl justify-center '>
                 <h1 className='md:relative top-0 p-2 md:p-0 absolute md:text-5xl! text-xl! justify-center  font-bold md:pb-4 text-shadow-black text-shadow-xs '>Mock A Book</h1>
                 
-                <div className='relative h-10 w-full  flex-row flex  items-center'>
-                    <div className={`border-2 border-b-0 h-full cursor-pointer  w-32 ${currentMenu === "Sizing" ? "bg-gray-300" : "bg-[#ababab] "} flex justify-center`} onClick={() => setCurrentMenu("Sizing")}>Scaling</div>
-                    <div className={`border-2 border-b-0 border-l-0 h-full cursor-pointer  w-32 ${currentMenu === "Images" ? "bg-gray-300" : "bg-[#ababab] "} flex justify-center`} onClick={() => setCurrentMenu("Images")}>Images</div>
+                <div className='relative h-10 w-full  flex-row flex  items-end'>
+                    <div className={`border-2 border-b-0 border-black cursor-pointer  w-32 ${currentMenu === "Sizing" ? "bg-[#ababab] h-full" : "bg-[#777777] hover:text-white/40 "} flex justify-center`} onClick={() => setCurrentMenu("Sizing")}>Scaling</div>
+                    <div className={`border-2 border-b-0 border-black -translate-x-[2px] bottom-0 cursor-pointer  w-32 ${currentMenu === "Images" ? "bg-[#ababab] h-full" : "bg-[#777777] hover:text-white/40 "} flex justify-center`} onClick={() => setCurrentMenu("Images")}>Images</div>
 
                 </div>
-                <div className='flex flex-col  h-full overflow-y-auto p-4 border-gray-800 border-2 md:gap-y-6 gap-y-2  bg-[#ababab]'>                    
+                <div className='w-full flex flex-col h-full overflow-y-auto p-4 border-gray-800 border-2 md:gap-y-6 gap-y-2  bg-[#ababab]'>                    
                     <MenuWrapper menu={currentMenu} bookInfos={bookInfos} setbookInfos={setbookInfos} />
                 </div>
                 

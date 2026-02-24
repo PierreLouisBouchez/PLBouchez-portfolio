@@ -3,7 +3,7 @@ import CustomFileInput from './CustomFileInput'
 
 function Images() {
     return (
-        <div className='flex flex-col  gap-y-2'>
+        <div className='flex flex-col grow w-full gap-y-2'>
             <div className='h-auto bg-gray-300   w-full flex-col flex p-2  border-2'>
                 <h2>Front cover</h2>
                 <CustomFileInput name={"front"} />
