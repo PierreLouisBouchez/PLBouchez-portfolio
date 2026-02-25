@@ -3,6 +3,10 @@ h1{
     font-size: 3rem;
 }
 
+*{
+  -webkit-user-select:none;
+  user-select:none;
+}
 
 /* Custom Slider Styles */
 input[type="range"] {

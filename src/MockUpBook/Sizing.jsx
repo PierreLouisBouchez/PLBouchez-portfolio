@@ -18,7 +18,7 @@ export default function Sizing({bookInfos,setbookInfos}) {
         <div className=' relative flex mt-4'>
             <span className='font-bold'>Preset</span>
             <div className='px-2 '>
-                <select className='bg-green-300/50 border-2 ' onChange={(e) => { const tmp = presets[e.target.value]; if (tmp) { setbookInfos({ ...bookInfos, width: tmp.width, height: tmp.height }) } }} >
+                <select className='bg-green-300/50 border-2 cursor-pointer ' onChange={(e) => { const tmp = presets[e.target.value]; if (tmp) { setbookInfos({ ...bookInfos, width: tmp.width, height: tmp.height }) } }} >
                     <option className='' key={"Aucun"} >Select a preset</option>
 
                     {presets && Object.keys(presets).map((item) => (
@@ -29,10 +29,10 @@ export default function Sizing({bookInfos,setbookInfos}) {
         </div>
         <div className='h-auto bg-gray-300   w-full flex-col flex p-2  border-2'>
             <span>Width : {(bookInfos?.width * 10).toFixed(2)} cm </span>
-            <input className='py-2 h-full justify-items-center rounded-none  ' type='range' min={1} max={4} step={0.01} value={bookInfos?.width} onChange={(e) => setbookInfos({ ...bookInfos, width: parseFloat(e.target.value) })} />
+            <input className='py-2 h-full justify-items-center rounded-none  ' type='range' min={1} max={4} step={0.005} value={bookInfos?.width} onChange={(e) => setbookInfos({ ...bookInfos, width: parseFloat(e.target.value) })} />
 
             <span>Height : {(bookInfos?.height * 10).toFixed(2)} cm </span>
-            <input className='py-2  h-full justify-items-center rounded-none  ' type='range' min={1} max={4} step={0.01} value={bookInfos?.height} onChange={(e) => setbookInfos({ ...bookInfos, height: parseFloat(e.target.value) })} />
+            <input className='py-2  h-full justify-items-center rounded-none  ' type='range' min={1} max={4} step={0.005} value={bookInfos?.height} onChange={(e) => setbookInfos({ ...bookInfos, height: parseFloat(e.target.value) })} />
         </div>
         <div className='h-auto bg-gray-300 w-full flex-col flex p-2 border-2'>
             <span>Depth : {(bookInfos?.depth * 10).toFixed(2)} cm ≈ {Math.ceil(bookInfos?.depth * 1250)} pages </span>

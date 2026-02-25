@@ -20,9 +20,18 @@ function Images({bookInfos,setbookInfos}) {
 
     return (
         <div className='flex flex-col grow w-full gap-y-2'>
+            <div className='h-auto flex-row bg-gray-300 justify-between items-center w-full flex p-2  border-2'>
+                Format 
+                <div className='h-auto  flex p-2 cursor-pointer bg-amber-600/50 border-2'>
+                3 files
+                </div>
+                <div className='h-auto bg-gray-300 cursor-not-allowed opacity-50 flex p-2  border-2'>
+                Full cover file
+                </div>
+            </div>
             <div className='h-auto bg-gray-300   w-full flex-col flex p-2  border-2'>
                 <h2>Front cover (Ratio : {(bookInfos?.height/bookInfos?.width).toPrecision(2)})</h2>
-                <CustomFileInput name={"front"}  handler={handleFileInput} hidden={bookInfos.front == null} />
+                <CustomFileInput className='w-1/2 bg-blue-500/30 hover:bg-blue-700/40' name={"front"}  handler={handleFileInput} hidden={bookInfos.front == null} />
                 <div className='w-full flex items-center gap-x-4'>
 
                 <img className={` border-2 h-40 ${bookInfos?.front ? "visible":"hidden"} `} src={bookInfos?.front}/>
@@ -38,7 +47,7 @@ function Images({bookInfos,setbookInfos}) {
             </div>
             <div className='h-auto bg-gray-300  flex  w-full flex-col  p-2  border-2'>
                 <h2>Side (Ratio : {(bookInfos?.height/bookInfos?.depth).toPrecision(2)})</h2>
-                <CustomFileInput name={"side"} handler={handleFileInput} hidden={bookInfos?.side== null} />
+                <CustomFileInput className=" bg-red-500/30 hover:bg-red-700/40" name={"side"} handler={handleFileInput} hidden={bookInfos?.side== null} />
                                 <div className='w-full flex items-center gap-2'>
 
                 <img className={` border-2 h-40 ${bookInfos?.side ? "visible":"hidden"} `} src={bookInfos?.side} />
@@ -55,7 +64,7 @@ function Images({bookInfos,setbookInfos}) {
             </div>
             <div className='h-auto bg-gray-300  flex w-full flex-col  p-2  border-2'>
                 <h2>Back cover (Ratio : {(bookInfos?.height/bookInfos?.width).toPrecision(2)})</h2>
-                <CustomFileInput name={"back"} handler={handleFileInput} hidden={bookInfos?.back== null} />
+                <CustomFileInput className=" bg-green-500/30 hover:bg-green-700/40" name={"back"} handler={handleFileInput} hidden={bookInfos?.back== null} />
                 <div className='w-full flex items-center gap-2'>
 
                 <img className={` border-2 h-40 ${bookInfos?.back ? "visible":"hidden"} `} src={bookInfos?.back} />

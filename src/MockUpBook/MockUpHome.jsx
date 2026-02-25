@@ -36,7 +36,10 @@ function MockUpHome() {
     return (
         <div className='h-[100vh] md:flex-row flex-col order flex bg-[#eeeeee] border-[#613a00] text-gray-800 font-Victor '>
             <div className=' md:w-1/3 w-full flex flex-col md:h-full h-1/3 pb-0 md:p-4 md:pb-4 order-1 md:text-xl justify-center '>
-                <h1 className='md:relative top-0 p-2 md:p-0 absolute md:text-5xl! text-xl! justify-center  font-bold md:pb-4 text-shadow-black text-shadow-xs '>Mock A Book</h1>
+                <div className='flex w-128 items-baseline gap-2'>
+
+                <h1 className='md:relative top-0 p-2 md:p-0 absolute md:text-5xl! text-xl! justify-center  font-bold md:pb-4 text-shadow-black text-shadow-xs '>Mock A Book </h1><h5 className='text-xs'>  by Pierre-Louis Bouchez</h5>
+                </div>
                 
                 <div className='relative h-10 w-full  flex-row flex  items-end'>
                     <div className={`border-2 border-b-0 border-black cursor-pointer  w-32 ${currentMenu === "Sizing" ? "bg-[#ababab] h-full" : "bg-[#777777] hover:text-white/40 "} flex justify-center`} onClick={() => setCurrentMenu("Sizing")}>Scaling</div>
