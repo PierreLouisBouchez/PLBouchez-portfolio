@@ -19,7 +19,7 @@ const Component = menus[menu] || Sizing; // fallback
 }
 
 function MockUpHome() {
-    const  [currentMenu, setCurrentMenu] = useState("Sizing");
+    const  [currentMenu, setCurrentMenu] = useState("Images");
     const [bookInfos, setbookInfos] = useState({ depth: 0.53, width: 1.05, height: 1.485 ,coverdepth:0.001, hardcover:false});    
 
     useEffect(() => {
