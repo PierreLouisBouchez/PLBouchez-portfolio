@@ -1,7 +1,7 @@
 import { AccumulativeShadows, Box, CameraControls, RandomizedLight } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
-import React, { useState } from 'react'
-import { MeshStandardMaterial } from 'three';
+import React, { Suspense, useEffect, useState } from 'react'
+import { MeshStandardMaterial, SRGBColorSpace } from 'three';
 import Book from './Book';
 import { EffectComposer, N8AO } from '@react-three/postprocessing';
 import Sizing from './Sizing';
@@ -19,8 +19,19 @@ const Component = menus[menu] || Sizing; // fallback
 }
 
 function MockUpHome() {
-    const  [currentMenu, setCurrentMenu] = useState("Images");
-    const [bookInfos, setbookInfos] = useState({ depth: 0.53, width: 1.05, height: 1.485 ,coverdepth:0.001, hardcover:false});
+    const  [currentMenu, setCurrentMenu] = useState("Sizing");
+    const [bookInfos, setbookInfos] = useState({ depth: 0.53, width: 1.05, height: 1.485 ,coverdepth:0.001, hardcover:false});    
+
+    useEffect(() => {
+    const unloadCallback = (event) => {
+        event.preventDefault();
+        event.returnValue = ""; 
+        return "";
+    };
+
+    window.addEventListener("beforeunload", unloadCallback);
+    return () => window.removeEventListener("beforeunload", unloadCallback);
+    }, []);
 
     return (
         <div className='h-[100vh] md:flex-row flex-col order flex bg-[#eeeeee] border-[#613a00] text-gray-800 font-Victor '>
@@ -37,13 +48,15 @@ function MockUpHome() {
                 </div>
                 
             </div>
-            <Canvas className="h-full md:w-2/3 w-full md:order-2 order-0" shadows camera={{ position:  [-2.5, 1.2, 3] , fov: 30 }} >
-                <hemisphereLight intensity={0.8} color={0xffffff} />
-                <directionalLight position={[-2, 2, 2]} intensity={2} />
+            <Canvas gl={{ outputColorSpace: SRGBColorSpace }} className="h-full md:w-2/3 w-full md:order-2 order-0" shadows camera={{ position:  [-2.5, 1.2, 3] , fov: 30 }} >
+                <ambientLight intensity={1} />
+                <directionalLight position={[-2, 2, 2]} intensity={1} /> 
+                <Suspense fallback={null}>
                 <Book position={[0,0,-bookInfos?.depth/2]} rotation={[1.57,0,0]} infos={bookInfos} />
                 <AccumulativeShadows position={[0,-bookInfos?.height/2,0]}  temporal  frames={30} color={"#000039"} opacity={0.5} scale={5}>
                     <RandomizedLight amount={5} radius={4} position={[1, 4, 1]} />
                 </AccumulativeShadows>
+                    </Suspense>
                 <CameraControls makeDefault maxDistance={7} minDistance={1.5}/>
             </Canvas>
 

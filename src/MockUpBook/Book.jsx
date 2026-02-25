@@ -1,5 +1,6 @@
 import { Box, RoundedBoxGeometry, useTexture } from '@react-three/drei'
 import React, { useEffect, useMemo, useRef } from 'react'
+import { MeshBasicMaterial, SRGBColorSpace } from 'three';
 import { BoxGeometry, ExtrudeGeometry, MeshStandardMaterial, RepeatWrapping, Shape, Vector3 } from 'three'
 
 function resetUVs(geometry,infos) {
@@ -111,9 +112,9 @@ export default function Book({ position, rotation,infos }) {
 
     const pagestexture = useTexture("3D/maps/pages.jpg")
     const pattern = useTexture("3D/maps/pattern2.jpg")
-    const fronttexture = useTexture("3D/maps/testfront.jpg")
-    const backtexture = useTexture("3D/maps/testback.jpg")
-    const sidetexture = useTexture("3D/maps/testside.jpg")
+    const fronttexture = useTexture(infos?.front || "3D/maps/front.jpg")
+    const backtexture = useTexture(infos?.back || "3D/maps/back.jpg")
+    const sidetexture = useTexture(infos?.side || "3D/maps/side.jpg")
 
     pagestexture.wrapS =  RepeatWrapping;
     pagestexture.wrapT = RepeatWrapping;
@@ -130,29 +131,28 @@ export default function Book({ position, rotation,infos }) {
     sidetexture.wrapS =  RepeatWrapping;
     sidetexture.wrapT = RepeatWrapping;
     sidetexture.repeat.set(1,1);
+    fronttexture.colorSpace = SRGBColorSpace
+    backtexture.colorSpace = SRGBColorSpace
+    sidetexture.colorSpace = SRGBColorSpace
 
 
-    const defaultMaterial = new MeshStandardMaterial({
+    const defaultMaterial = new MeshBasicMaterial({
         map: pagestexture,
-    color: 0xffffff,
     roughness: 0.95,
     metalness: 0,
     });
-    const frontmaterial = new MeshStandardMaterial({
+    const frontmaterial = new MeshBasicMaterial({
         map:fronttexture,
-        color: "#ffffff",
-        roughness: 0.95,
+        roughness: 0.75,
         metalness: 0,
     });
-    const backmaterial = new MeshStandardMaterial({
+    const backmaterial = new MeshBasicMaterial ({
         map:backtexture,
-        color: "#ffffff",
-        roughness: 0.5,
+        roughness: 0.75,
         metalness: 0,
     });
-    const sidematerial = new MeshStandardMaterial({
+    const sidematerial = new MeshBasicMaterial({
         map:sidetexture,
-        color: "#ffffff",
         roughness: 0.5,
         metalness: 0,
     });
