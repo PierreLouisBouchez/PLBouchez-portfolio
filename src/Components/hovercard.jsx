@@ -16,7 +16,9 @@ export default function HoverCard({ project, handler} )  {
 
   return (
 
-    <div className="relative select-none xl:bg-transparent bg-gray-300 h-auto w-full aspect-square outline-2 lg:border-2 border-gris outline-gris  lg:shadow-abberationrelief xl:translate-y- " onClick={() => { handler(project) }}>
+    <div className="relative select-none xl:bg-transparent bg-gray-300 h-auto 
+    w-full aspect-square outline-2 lg:border-2 border-gris outline-gris
+      lg:shadow-abberationrelief xl:translate-y- " onClick={() =>project?.link!=null ? window.open(project.link, "_blank") :  handler(project)}>
 
       <div className="relative h-full w-full p-2">
         <div className="xl:block hidden absolute top-0  -translate-x-1/2 left-2/3 h-4 origin-top w-0.5 bg-gris"></div>

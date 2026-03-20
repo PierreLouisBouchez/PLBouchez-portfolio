@@ -37,7 +37,7 @@ export default function Sizing({bookInfos,setbookInfos}) {
         <div className='h-auto bg-gray-300 w-full flex-col flex p-2 border-2'>
             <span>Depth : {(bookInfos?.depth * 10).toFixed(2)} cm ≈ {Math.ceil(bookInfos?.depth * 1250)} pages </span>
             <input className='py-2  h-full justify-items-center rounded-none  ' type='range' min={0.05} max={1} step={0.01} value={bookInfos?.depth} onChange={(e) => setbookInfos({ ...bookInfos, depth: parseFloat(e.target.value) })} />
-            <div className='py-4 flex items-center h-auto '><span>Hardcover (Work in progress) :    </span><input checked={bookInfos?.hardcover} className='ml-2 overflow-hidden w-6 items-center mt-1 h-full custom-checkbox ' type='checkbox' onChange={(e) => { setbookInfos({ ...bookInfos, hardcover: e.target.checked, coverdepth: e.target.checked ? 0.01 : 0.001 }); }} /></div>
+            <div className='py-4 flex items-center h-auto  ' disabled ><span className='opacity-50 '>Hardcover  :    </span><input checked={bookInfos?.hardcover} className='ml-2 overflow-hidden w-6 items-center mt-1 h-full opacity-50 custom-checkbox ' type='checkbox' /* onChange={(e) => { setbookInfos({ ...bookInfos, hardcover: e.target.checked, coverdepth: e.target.checked ? 0.01 : 0.001 }); }} */ /><span className=' px-6'> Coming soon!    </span></div>
             {bookInfos?.hardcover && (<>
                 <span>Cover thickness : {(bookInfos?.coverdepth * 10).toFixed(2)} cm  </span>
                 <input className='py-2  h-full justify-items-center rounded-none  ' type='range' min={0.01} max={0.025} step={0.001} value={bookInfos?.coverdepth} onChange={(e) => setbookInfos({ ...bookInfos, coverdepth: parseFloat(e.target.value) })} />

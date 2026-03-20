@@ -80,6 +80,11 @@ export const ListProject = [
     "Description":"Projet réalisé en 2024 à l'occasion d'un challenge proposé par le Youtuber @MATHIEU_YT. Dans ce projet je me suis principalement occupé de la partie 3d (Environnement, Player, Level Design), pendant que mon coéquipier s'est occupé du Gameplay et de l'Audio."
   },
   {
+    "title":"Mock a Book",
+    "image":"mockabook.webp",
+    "link":"/MockABook"
+  },
+  {
     "title":"Bomberman",
     "image":"bomberman.webp",
     "video":"bomberman.webm",
