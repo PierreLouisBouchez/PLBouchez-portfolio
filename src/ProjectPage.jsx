@@ -91,10 +91,10 @@ export default function Projects({ CurrentMenu }) {
         }
       : {}
   }     ref={containerRef} className="  w-full h-[calc(100%-5)]  justify-start items-center min-h-0 xl:overflow-x-auto xl:overflow-y-clip overflow-y-scroll xl:pb-0 pb-12 cursor-pointer xl:flex flex-col xl:flex-row">
+    {currentProject?.videoInCarrousel && <video src={`/videos/${currentProject.video}`} className="xl:h-full  grow w-auto xl:mx-4 mx-2 my-2 "  muted defaultMuted controls={true} loop autoPlay preload='auto'    />}
                      {currentProject?.Gallery && currentProject?.Gallery.map((img, index) => (
                         <img src={"/projects/"+img} alt={"Image du projet " + currentProject?.title + " n°" + (index + 1)} className=" xl:h-full w-auto xl:mx-4 mx-2 my-2 " loading="lazy" key={index} />
                      ))}
-                {currentProject?.videoInCarrousel && <video src={`/videos/${currentProject.video}`} className="xl:h-full grow w-auto xl:mx-4 mx-2 my-2 "  muted defaultMuted controls={true} loop autoPlay preload='auto'    />}
                   </div> 
               </div>
             </div>

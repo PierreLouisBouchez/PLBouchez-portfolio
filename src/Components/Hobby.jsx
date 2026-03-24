@@ -4,16 +4,19 @@ import React, { useEffect, useState } from 'react'
 
 export default function Hobby() {
     const images=[
+      {"name":"/2D/yae.jpg"},
         {"name":"/2D/berserk.heic"},
         {"name":"/2D/elf.heic"},
+        {"name":"/2D/multipla.jpg","ratio":"square"},
         {"name":"/2D/ahsoka.jpg"},
         {"name":"/2D/cyberpunk.heic"},
-        {"name":"/2D/Jecki.heic"},
-        {"name":"/2D/yae.jpg"},
-        {"name":"/2D/arcane.jpg","ratio":"square"},
         {"name":"/2D/martini.webp", "col":"full"},
-        {"name":"/2D/multipla.jpg","ratio":"square"},
+        {"name":"/2D/arcane.jpg","ratio":"square"},
+        {"name":"/2D/bubblegum.webp"},
+        {"name":"/2D/beatles.webp"},
         {"name":"/2D/mustang.jpg","ratio":"square"},
+        {"name":"/2D/maomao.webp"},
+        {"name":"/2D/Jecki.heic"},
         {"name":"/2D/portal.jpg","ratio":"square"},
     ];
 
@@ -47,7 +50,7 @@ const [columns, setColumns] = useState(3);
   const imageColumns = distributeImages();
 
   return (
-    <div className="p-4 h-full overflow-scroll">
+    <div className="p-4 h-full overflow-y-scroll">
       <div className="flex gap-4 h-full ">
         {imageColumns.map((column, columnIndex) => (
           <div key={columnIndex} className="flex-1 space-y-4">
