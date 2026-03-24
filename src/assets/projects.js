@@ -62,6 +62,7 @@ export const ListProject = [
     "title":"Briqueton",
     "image":"lego.webp",
     "video":"Lego.webm",
+    "videoInCarrousel":true,
     "logo":["blender","unreal"],
     "techno":[
       "Unreal Engine",
@@ -72,12 +73,13 @@ export const ListProject = [
     "title":"Differential",
     "image":"differential.webp",
     "video":"differential.webm",
+    "videoInCarrousel":true,
     "logo":["blender","unreal"],
     "techno":[
       "Unreal Engine",
       "Blender"
     ],
-    "Description":"Projet réalisé en 2024 à l'occasion d'un challenge proposé par le Youtuber @MATHIEU_YT. Dans ce projet je me suis principalement occupé de la partie 3d (Environnement, Player, Level Design), pendant que mon coéquipier s'est occupé du Gameplay et de l'Audio."
+    "Description":"Projet personnel réalisé en 2025, le but de ce projet était de tester la puissance du moteur physique d'Unreal engine. La reproduction d'une pièce technique comme un différentiel de voiture fut tout trouvée. Pour ce projet j'ai réalisé les modélisations et les collisions des engrenages pour plus de précision."
   },
   {
     "title":"Mock a Book",
@@ -88,6 +90,7 @@ export const ListProject = [
     "title":"Bomberman",
     "image":"bomberman.webp",
     "video":"bomberman.webm",
+    "videoInCarrousel":true,
     "logo":["blender","unreal"],
     "techno":[
       "Unreal Engine",
@@ -101,6 +104,9 @@ export const ListProject = [
     "title":"Ville Renouvelée",
     "image":"roubaix.webp",
     "video":"Roubaix.webm",
+    "videoInCarrousel":true,
+    "Link":"https://www.youtube.com/watch?v=U2aEHZFd7qU",
+    "Description":"Projet réalisé en 2025, pour la SPL Ville Renouvelée, le but étant d'imaginer et de créer une vue d'esprit pour la renovation du Parc des Sports à Roubaix ", 
     "logo":["blender","unreal"],
     "techno":[
       "Unreal Engine",
