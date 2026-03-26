@@ -42,7 +42,8 @@ function MockUpHome() {
                     <svg className='size-full scale-150' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6z"/></svg>
                     </div>
                 <h2 className='text-3xl text-center'>Welcome to Mock a Book !</h2>
-                <div className='text-2xl py-6 text-center text-justify'>Mock a Book is an app that allows writers to create mock-ups of their books.<br/><br/> Enter the dimensions, upload your book cover images and admire your</div>
+                <div className='text-2xl py-6  text-justify'>Mock a Book is an app that allows writers to create mock-ups of their books.<br/><br/> Enter the dimensions, upload your book cover images and admire your ✨ Chef-d'œuvre ✨</div>
+                <img className=' h-[60%] items-center justify-center w-full object-contain' src='videos/intro.gif'/>
                 </div>
             </div>}
             <div className=' md:w-1/3 w-full flex flex-col md:h-full h-1/3 pb-0 md:p-4 md:pb-4 order-1 md:text-xl justify-center '>
