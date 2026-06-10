@@ -23,7 +23,7 @@ export const ListProject = [
     "title":"Invaders Ampli",
     "image":"invaders.webp",
     "video":"invaders.webm",
-    "Link":"https://invaders-amplification.pages.dev/",
+    "Link":"https://custom.invadersamplification.com/",
     "videoInCarrousel":true,
     "logo":["blender","react"],
     "techno":[
