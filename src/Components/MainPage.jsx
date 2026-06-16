@@ -32,9 +32,9 @@ function MainPage() {
 
         { isMobile && <HeaderMobile currentMenu={currentMenu} setCurrentMenu={setCurrentMenu} Menus={Menus}/>}
         
-        <div className='flex-1 relative flex overflow-hidden'>
+        <div className='flex-1 relative flex '>
 
-          <div className={`absolute w-[100%]  h-[100vh] overflow-hidden transition-transform duration-1000 xl:pl-4 ${currentMenu == "Project" ? "none" : "translate-x-full"}`}>
+          <div className={`absolute w-[100%]  h-[100vh]  transition-transform duration-1000 xl:pl-4 ${currentMenu == "Project" ? "none" : "translate-x-full"}`}>
             <Projects />
           </div>
           <div className={`absolute  w-[100%]  h-[100vh] overflow-hidden transition-transform duration-1000 xl:pl-4 ${currentMenu == "About" ? "none" : "translate-x-full"}`}>
