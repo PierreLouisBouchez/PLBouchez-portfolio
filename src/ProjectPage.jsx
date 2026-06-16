@@ -130,7 +130,7 @@ export default function Projects({ CurrentMenu }) {
 
 
 
-        <div className={`-z-50 absolute cursor-pointer flex   -left-[40px]  border-2 xl:border-3 h-40 rounded-l-2xl xl:top-10 top-[40vh]  w-[40px] border-gris  bg-gray-300  `}>
+        <div className={`-z-50 absolute cursor-pointer flex   -left-[40px]  border-2 xl:border-3 h-40  xl:top-10 top-[40vh]  w-[40px] border-gris  bg-gray-300  `}>
           <span className="-rotate-90 flex translate-x-8.5 z-50 text-gris text-2xl  font-bold" onClick={() => { handleReturn() }}>
             RETOUR
           </span>
