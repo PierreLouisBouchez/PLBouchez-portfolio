@@ -19,14 +19,18 @@ function MainPage() {
 
       ]
     ;
-
   
 
   return (
     <div className={`h-screen w-screen font-Victor flex xl:flex-row flex-col bg-[url(/Images/Background.webp)] bg-cover bg-bottom-left  overflow-clip`}    >
       <div className="absolute w-screen h-screen opacity-10 z-50 pointer-events-none bg-[url(/Images/Noise.jpg)]"></div>
         
-        { !isMobile && <Header currentMenu={currentMenu} setCurrentMenu={setCurrentMenu} Menus={Menus}/>
+        { !isMobile && <>
+        <Header currentMenu={currentMenu} setCurrentMenu={setCurrentMenu} Menus={Menus}/>
+        <div className="absolute top-0 left-0 bg-amber-300/0  -z-0 w-full h-full flex items-center justify-center text-white text-2xl pointer-events-none">
+          <img src="/Images/LightBackground.png" alt="Background" className="w-full h-full bg-blend-saturation animate-pulse object-cover opacity-80 pointer-events-none" />
+        </div>
+        </>
         }
         
 

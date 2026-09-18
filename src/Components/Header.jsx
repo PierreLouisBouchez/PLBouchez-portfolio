@@ -21,7 +21,7 @@ export default function Header({currentMenu,setCurrentMenu,Menus}) {
     
 
     return (
-      <div className="flex w-[620px] mr-16 perspective-near perspective-origin-bottom-right h-[100vh] ">
+      <div className="flex w-[620px] mr-16 perspective-near perspective-origin-bottom-right h-[100vh] z-10">
         <div className="w-full h-full bg-cover bg-size-[200%] bg-no-repeat bg-right-bottom  bg-[url(/Images/Untitled.webp)] ">      </div>
 
         <div className={` absolute  cursor-grab h-6 w-6 rounded-full ${intensity<50?"blur-xs bg-white border-5 border-red-700":"bg-red-900 blur-xs"}  bottom-[1.3rem] left-[29.35rem] `}  >

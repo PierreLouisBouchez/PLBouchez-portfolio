@@ -81,6 +81,17 @@ export const ListProject = [
       "Blender"
     ],
     "Description":"Projet personnel réalisé en 2025, le but de ce projet était de tester la puissance du moteur physique d'Unreal engine. La reproduction d'une pièce technique comme un différentiel de voiture fut tout trouvée. Pour ce projet j'ai réalisé les modélisations et les collisions des engrenages pour plus de précision."
+  },{
+    "title":"Plane Controller",
+    "image":"plane.webp",
+    "video":"plane.webm",
+    "videoInCarrousel":true,
+    "logo":["blender","unreal"],
+    "techno":[
+      "Unreal Engine",
+      "Blender"
+    ],
+    "Description":"Projet personnel réalisé en 2026, Le but étant de pouvoir piloter un avion, ici un Spitfire, avec une physique 'réaliste', du décollage à l'atterrissage.🛫 "
   },
   {
     "title":"Mock a Book",
