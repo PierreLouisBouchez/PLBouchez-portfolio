@@ -37,7 +37,7 @@ export const ListProject = [
       "invaders2.webp",
       "invaders3.webp",
     ],
-    "Description":"Projet réalisé en 2025 et 2026. Un configurateur d'amplificateur, permettant de visualiser en 3D et de personnaliser son ampli. Dans ce projet j'ai eu l'oocassion de modéliser et créer les textures de toutes les amplis disponibles.",
+    "Description":"Projet réalisé en 2025 et 2026. Un configurateur d'amplificateur, permettant de visualiser en 3D et de personnaliser son ampli. Dans ce projet j'ai eu l'occasion de modéliser et créer les textures de toutes les amplis disponibles.",
   },
   {
     "title":"Winncare",
